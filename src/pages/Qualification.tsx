@@ -123,7 +123,7 @@ const Qualification = () => {
 			<div className="clients">
 				<div className="container">
 					<span className="title">Nuestros clientes opinan</span>
-					<Clients></Clients>
+					<Clients />
 				</div>
 			</div>
 			<div className="footer">

@@ -35,7 +35,7 @@ const Capture = () => {
 						</div>
 						<ul>
 							<li>
-								<div>
+								<div className="bp-icon">
 									<i className="fa fa-rocket fa-2x" aria-hidden="true" />
 								</div>
 								<div className="text">
@@ -51,7 +51,7 @@ const Capture = () => {
 								</div>
 							</li>
 							<li>
-								<div>
+								<div className="bp-icon">
 									<i className="fa fa-handshake-o fa-2x" aria-hidden="true" />
 								</div>
 								<div className="text">
@@ -67,11 +67,11 @@ const Capture = () => {
 								</div>
 							</li>
 							<li>
-								<div>
+								<div className="bp-icon">
 									<i className="fa fa-users fa-2x" aria-hidden="true" />
 								</div>
 								<div className="text">
-									<h5 className="pb-emfasys">Potencialidad</h5>
+									<h5 className="bp-emfasys">Potencialidad</h5>
 									<p>
 										Escalabilidad Infinita. Soportamos Todo el Crecimiento que Tu Agencia Tendrá.
 									</p>
@@ -83,7 +83,7 @@ const Capture = () => {
 								</div>
 							</li>
 							<li>
-								<div>
+								<div className="bp-icon">
 									<i className="fa fa-cogs fa-2x" aria-hidden="true" />
 								</div>
 								<div className="text">
@@ -99,7 +99,7 @@ const Capture = () => {
 								</div>
 							</li>
 							<li>
-								<div>
+								<div className="bp-icon">
 									<i className="fa fa-shield fa-2x" aria-hidden="true" />
 								</div>
 								<div className="text">
@@ -135,7 +135,7 @@ const Capture = () => {
 					<i className="fa fa-instagram fa-2x" aria-hidden="true" />
 					<i className="fa fa-youtube-play fa-2x" aria-hidden="true" />
 				</div>
-				<div>
+				<div className="copyright">
 					Copyright &copy; 2020 Ando Solutions. Todos Los Derechos Reservados.
 				</div>
 			</div>

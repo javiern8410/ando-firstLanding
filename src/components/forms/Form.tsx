@@ -65,7 +65,7 @@ const Form: FunctionComponent<any> = () => {
 						¡DESCUBRE LA POTENCIA QUE LE DAMOS A TU NEGOCIO!
 					</h6>
 					<h3 style={{textAlign: 'center', margin: '15px'}}>
-						Accede al demo que hemos preparado exclusivamente apara ti ahora.
+						Accede al demo que hemos preparado exclusivamente para ti ahora.
 					</h3>
 				</div>
 				<div className="form-body">

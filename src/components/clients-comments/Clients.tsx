@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Slider from 'infinite-react-carousel';
 import SingleComment from './SingleComment';
 import { db } from "../../firebase";
 import './clients.scss';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination} from 'swiper';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/scrollbar/scrollbar.scss';
 
 const captureSettings = {
     arrows: false,
@@ -17,6 +23,8 @@ const offerSettings = {
     duration: 100,
     dots: true,
 };
+
+SwiperCore.use([Navigation, Pagination]);
 
 const Clients: React.FunctionComponent<any> = ({ page }) => {
     const [comments, setComments] = useState([]);
@@ -63,18 +71,35 @@ const Clients: React.FunctionComponent<any> = ({ page }) => {
             )}
             {!loading &&
                 comments.length > 0 && (
-                    <Slider {...settings}>
+
+                    <Swiper
+                        spaceBetween={50}
+                        slidesPerView={1}
+                        navigation
+                        loop={true}
+                    >
                         {!loading &&
                             comments.length > 0 &&
                             comments.map((comment, index) => {
-                                return <SingleComment comment={comment} key={index} />;
+                                return <SwiperSlide key={index}> <SingleComment comment={comment} /> </SwiperSlide>;
                             })
                         }
-                    </Slider>
+                    </Swiper>
                 )
             }
         </div>
     );
 };
+
+{/* <div className="swiper-container">
+                        <div className="swiper-wrapper">
+                            {!loading &&
+                                comments.length > 0 &&
+                                comments.map((comment, index) => {
+                                    return <SingleComment comment={comment} key={index} />;
+                                })
+                            }
+                        </div>
+                    </div> */}
 
 export default Clients;

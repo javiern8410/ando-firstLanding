@@ -49,8 +49,12 @@
                     font-size: 16px;
                     color: #2d2c2c;
 
+                    .bp-icon {
+                        min-width: 65px;
+                        text-align: center;
+                    }
+
                     i {
-                        padding: 15px;
                         color: #00456f;
                     }
 
@@ -112,6 +116,7 @@
             max-width: 1280px;
 
             .title {
+                text-align: center;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -132,6 +137,10 @@
         min-height: 100px;
         padding: 20px;
 
+        .copyright {
+            text-align: center;
+        }
+
         .social-links {
             padding: 10px;
 
@@ -146,7 +155,7 @@
         font-weight: 500;
     }
 
-    .pb-emfasys {
+    .bp-emfasys {
         color: #00456f;
         font-weight: 500;
     }
