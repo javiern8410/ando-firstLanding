@@ -1,7 +1,7 @@
 import React from 'react';
 import './avatar.scss';
 
-const Avatar: React.FunctionComponent<any> = ({ name }) => {
+const Avatar: React.FunctionComponent<any> = ({ name, avatar }) => {
     const getName = () => {
         return name
             .split(' ')
@@ -10,11 +10,22 @@ const Avatar: React.FunctionComponent<any> = ({ name }) => {
             .join('');
     }
 
+    let avatarUrl = null;
+    if(avatar) {
+        avatarUrl = require(`../../images/clients/${avatar}`);
+    }
+
     return (
             <div className='avatar'>
-                <span>
-                    {getName()}
-                </span>
+                {
+                    avatar ? (
+                        <img src={avatarUrl} alt={name} width="300px" loading="lazy" />
+                    ):(
+                        <span>
+                            {getName()}
+                        </span>
+                    )
+                }
             </div>
     );
 };

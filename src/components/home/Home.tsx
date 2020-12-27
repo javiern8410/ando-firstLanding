@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "../form/Form";
+import Form from "../forms/Form";
 import "./home.scss";
 const homeImg = require("../../images/homePic.jpg");
 

@@ -1,0 +1,274 @@
+@import "../styles/";
+@import "../styles/colors";
+
+.thanks-container {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, blue, white);
+
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    overflow: visible;
+    min-height: 100vh;
+    color: $color-white;
+
+    .main {
+        flex-grow: 1;
+        background-color: $color-white;
+        display: flex;
+        padding: 10px 0 60px 0;
+
+        .container {
+            max-width: 1280px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+            grid-gap: 10px;
+            justify-items: center;
+
+            .offer-picture {
+                text-align: center;
+            }
+
+            .offer-video {
+                text-align: center;
+
+                .video {
+                    width: 100%;
+                    max-width: 560px;
+                    height: 315px;
+                }
+
+                img {
+                    width: 100%;
+                    max-width: 560px;
+                    height: 315px;
+                }
+            }
+
+            .subtitle {
+                color: #626264;
+                font-size: 16px;
+                text-align: center;
+                padding: 5px 5px 0 5px;
+            }
+        }
+    }
+
+    .header {
+        background-color: $color-white;
+        color: $color-black;
+
+        .header-top {
+            display: flex;
+            justify-content: center;
+            box-shadow: 1px 0px 6px 3px #bdbdbdc7;
+
+            .logo {
+                max-width: 1280px;
+                width: 100%;
+            }
+        }
+
+        .container {
+            max-width: 1280px;
+            padding: 10px;
+
+            .slogan {
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                margin: 10px 0 20px 0;
+                width: 100%;
+                color: $color-black;
+                font-size: 24px;
+                display: flex;
+            }
+
+            .subtitle {
+                color: #152b9c;
+                font-size: 24px;
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .header-msg {
+                color: $color-black;
+                font-size: 46px;
+                text-align: center;
+            }
+        }
+    }
+
+    .clients {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        min-height: 150px;
+        padding: 10px;
+        background-color: white;
+        color: $color-black;
+        text-align: center;
+
+        .container {
+            max-width: 1280px;
+
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 28px;
+                font-weight: bold;
+                padding: 10px 0;
+            }
+
+        }
+
+        .carousel-dots li button:before {
+            opacity: .35;
+            color: #d45806 !important;
+            
+            .carousel-dots-active {
+                color: #52b1ea !important;
+            }
+        }
+
+        .social-links {
+            padding: 10px;
+            color: #52b1ea;
+
+            i {
+                margin: 10px;
+            }
+        }
+
+        .copy {
+            color: #52b1ea;
+        }
+
+    }
+
+    .offer-24hrs {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        min-height: 550px;
+
+        background-color: rgba(52, 52, 90, 0.7);
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            max-width: 1280px;
+
+            .offer-message {
+                width: 80%;
+                height: 150px;
+                background-color: #e1e1e8e7;
+                -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 51% 93%, 50% 100%, 49% 93%, 0 93%);
+                clip-path: polygon(0% 0%, 100% 0%, 100% 87%, 51% 87%, 50% 100%, 49% 87%, 0 87%);
+                margin: 30px 0;
+                color: black;
+                padding: 10px;
+
+                font-size: 36px;
+                text-align: center;
+            }
+
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 28px;
+                font-weight: bold;
+                padding: 10px 0;
+            }
+        }
+
+    }
+
+    .free-month {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 150px;
+        padding: 10px;
+        background-color: #c8effc;
+
+        .container {
+            max-width: 1280px;
+
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 28px;
+                font-weight: bold;
+                padding: 10px 0;
+                border-bottom: 2px solid #82b0e24d;
+                color: #152b9c;
+            }
+
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+                grid-gap: 20px;
+                justify-items: center;
+                margin: 30px 0;
+            }
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(32, 32, 53, 0.8);
+        color: $color-white;
+        min-height: 100px;
+        padding: 20px;
+
+        .social-links {
+            padding: 10px;
+
+            i {
+                margin: 10px;
+            }
+        }
+    }
+
+    .emfasys {
+        color: #52b1ea;
+        font-weight: 500;
+    }
+
+    .btn-free-month {
+        border-radius: 25px;
+        border: 0;
+        padding: 10px 35px;
+        background-color: #ee660b;
+        color: $color-white;
+        outline: 0;
+
+        &:hover {
+            background-color: #d45806;
+            box-shadow: 0 0 4px 1px #757171ba;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .offer-container .offer-24hrs .container .offer-message {
+        width: 90%;
+        min-height: 165px;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 87%, 54% 87%, 50% 100%, 46% 87%, 0 87%);
+        font-size: 20px;
+    }
+}

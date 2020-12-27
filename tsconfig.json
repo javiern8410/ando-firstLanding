@@ -20,11 +20,11 @@
     "jsx": "react",
     "typeRoots": [ 
       "./node_modules/@types",
-      "./typings.d.ts"
+      "./tying.d.ts"
     ]
   },
   "include": [
     "src",
-    "./typings.d.ts"
+    "./tying.d.ts"
   ]
 }

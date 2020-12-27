@@ -1,9 +1,9 @@
 .back-top {
-    background: #404DFF;
+    background: #404DFF !important;
     height: 50px;
     width: 50px;
-    right: 20px;
-    bottom: 18px;
+    right: 10px;
+    bottom: 10px;
     position: fixed;
     font-size: 24px;
     text-align: center;
@@ -13,6 +13,8 @@
     box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.76);
     display: block;
     opacity: 0.6;
+    transition: 1s all;
+    z-index: 999;
 
     a {
       color: white;

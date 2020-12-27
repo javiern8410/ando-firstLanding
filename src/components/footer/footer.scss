@@ -5,6 +5,8 @@
     background: #000;
     font-size: 18px;
     color: #fff;
+    width: 100%;
+    min-height: 350px;
 
     &::before {
         content: '';
@@ -27,7 +29,7 @@
         justify-items: center;
         padding: 120px 10px 30px 10px;
 
-        & > div {
+        &>div {
             margin-top: 20px;
         }
 
@@ -44,7 +46,7 @@
     }
 
     @media (min-width:600px) {
-        .footer-top .footer-mid{
+        .footer-top .footer-mid {
             border-left: 1px solid rgba(255, 255, 255, 0.4);
             border-right: 1px solid rgba(255, 255, 255, 0.4);
         }

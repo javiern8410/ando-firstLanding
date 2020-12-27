@@ -1,36 +1,6 @@
 .logo {
-    color: #fff;
-    width: 350px;
-    align-items: center;
-
-    .logo-text {
-        display: flex;
-        flex-direction: row;
-
-        .logo-name {
-            font-size: 40px;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .logo-slogan {
-            font-size: 14px;
-            text-align: center;
-            line-height: 1em;
-            vertical-align: middle;
-            padding: 10px 0 5px 0;
-        }
-    }
-    
-    a {
-        color: #fff;
-        text-decoration: none;
-    }
-
-    span {
-        display: block;
-
-    }
+    display: flex;
+    flex-direction: row;
 
     img {
         float: left;

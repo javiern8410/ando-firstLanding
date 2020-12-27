@@ -1,0 +1,125 @@
+.single-comment {
+    width: 100%;
+    margin: 10px;
+    font-size: medium;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+
+    .container {
+        padding: 20px;
+        min-height: 120px;
+        text-align: left;
+
+        i {
+            color: #cac9c9;
+        }
+
+        .user-data {
+            padding: 0px
+        }
+    }
+
+    .quote-right {
+        text-align: right;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .user-info {
+        display: flex;
+        padding: 10px;
+        align-content: center;
+
+        &>div {
+            margin-right: 20px;
+        }
+
+        .username {
+            color: #1b1b1b;
+            font-size: 14px;
+        }
+
+        .email {
+            font-size: small;
+        }
+    }
+
+}
+
+.carousel-dots li button:before {
+    font-family: 'slick';
+    font-size: 66px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .25;
+    color: white !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+@media (max-width: 500px) {
+    .carousel-initialized {
+        .carousel-track {
+            min-height: 405px !important;
+        }
+    }
+
+    .single-comment {
+        // flex-direction: column;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 300px;
+        background-color: white;
+        color: #979595;
+        font-size: medium;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        padding: 10px;
+        height: 100%;
+
+        .quote-left {
+            text-align: left;
+        }
+
+        .quote-right {
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            i {
+                color: #cac9c9;
+            }
+        }
+
+        .user-info {
+            display: flex;
+            padding: 10px;
+            align-content: center;
+
+            .username {
+                color: #1b1b1b;
+                font-size: 14px;
+            }
+
+            .email {
+                font-size: small;
+            }
+        }
+    }
+}
