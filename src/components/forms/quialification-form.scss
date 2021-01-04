@@ -24,13 +24,16 @@
         }
     }
 
-    .btn-free-month {
+    .btn-free-month-md {
         border-radius: 25px;
         border: 0;
         padding: 10px 35px;
         background-color: #ee660b;
         color: $color-white;
+        font-size: 18px;
+        font-weight: normal;
         outline: 0;
+        min-width: 200px;
 
         &:hover {
             background-color: #d45806;

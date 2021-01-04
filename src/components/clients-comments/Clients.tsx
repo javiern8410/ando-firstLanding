@@ -4,7 +4,7 @@ import { db } from "../../firebase";
 import './clients.scss';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination} from 'swiper';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
@@ -90,16 +90,5 @@ const Clients: React.FunctionComponent<any> = ({ page }) => {
         </div>
     );
 };
-
-{/* <div className="swiper-container">
-                        <div className="swiper-wrapper">
-                            {!loading &&
-                                comments.length > 0 &&
-                                comments.map((comment, index) => {
-                                    return <SingleComment comment={comment} key={index} />;
-                                })
-                            }
-                        </div>
-                    </div> */}
 
 export default Clients;

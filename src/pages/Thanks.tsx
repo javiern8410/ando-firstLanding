@@ -4,10 +4,7 @@ import ToTopBtn from "../components/totopbtn/ToTopBtn";
 import './thanks.scss';
 
 import logo from '../images/logo.png';
-import my_business from '../images/my-business.png';
-import gdsScreen from '../images/gds-screen.png';
-import singleOpinion from '../images/single-opinion.png';
-import singleOpinionText from '../images/single-comment-text.png';
+import my_business from '../images/vacations.jpg';
 
 const Thanks = () => {
 	return (
@@ -16,36 +13,52 @@ const Thanks = () => {
 				<div className="header-top">
 					<Logo />
 				</div>
+			</div>
+			<div className="main">
 				<div className="container">
 					<div className="header-msg">
 						<span className="emfasys"> Hemos Recibido Tu Solicitud Con Éxito! </span>
 					</div>
-					<div>
-						<p className="subtitle">
-							Antes de comenzar el emocionante viaje hacia el éxito debes preguntarte...
-						</p>
+				</div>
+				<div className="container">
+					<div className="main-subtitle">
+						Antes de comenzar el emocionante viaje hacia el éxito debes preguntarte...
 					</div>
 				</div>
-			</div>
-			<div className="main">
 				<div className="container">
-					<div className="offer-picture">
-						<img src={my_business} className="img-fluid" alt="AndoPQ Software Solutions" width="460px" />
+					<div className="email-steps">
+						<p>
+							Para garantizar que recibas nuestro correo sin problemas haz lo siguiente:
+						</p>
+						<ul>
+							<li>
+								<div className="bp-icon">
+									<i className="fa fa-envelope-o fa-2x" aria-hidden="true" />
+								</div>
+								Ve a tu bandeja de entrada. Si no encuentras nuestro correo
+								(nombre del remitente) revisa en las bandejas de spam y promociones, a veces van allí los correos. 
+							</li>
+							<li>
+								<div className="bp-icon">
+									<i className="fa fa-address-card fa-2x" aria-hidden="true" />
+								</div>
+								Agréganos a tu lista de remitentes
+							</li>
+						</ul>
+						<h5>
+							Una Última Sugerencia....
+						</h5>
+						<ul>
+							<li>
+								<div className="bp-icon">
+									<i className="fa fa-users fa-2x" aria-hidden="true" />
+								</div>
+								Visita nuestra página de Facebook dónde encontrarás mucha información de gran utilidad.
+							</li>
+						</ul>
 					</div>
 					<div className="offer-video">
-						{/* <iframe className="video" src="https://www.youtube.com/embed/C7whcHmiaN8" 
-							frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-							allowFullScreen title="Oferta Sistema GDS"></iframe> */}
-						<img src={my_business} alt="AndoPQ Software Solutions" width="560px" height="350px" />
-
-						<h5 className="emfasys">El Mejor Momento es HOY...</h5>
-						<p className="subtitle">
-							Descubre si calificas para probar <span className="emfasys"> tu propia plataforma de reservas </span> durante
-							todo <span className="emfasys"> un mes totalmente gratis </span> haciendo clic en el botón de abajo ahora.
-						</p>
-						<div className="btn-free">
-							<button className="btn-free-month">UN MES GRATIS</button>
-						</div>
+						<img src={my_business} className="img-fluid vacation-pic" alt="AndoPQ Software Solutions" width="460px" height="auto" />
 					</div>
 				</div>
 			</div>

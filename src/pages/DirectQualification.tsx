@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from "../components/header/logo/Logo";
-import QualificationForm from "../components/forms/QualificationForm";
+import DirectQualificationForm from "../components/forms/DirectQualificationForm";
 import Clients from "../components/clients-comments/Clients";
 import ToTopBtn from "../components/totopbtn/ToTopBtn";
 import './qualification.scss';
@@ -9,7 +9,7 @@ import logo from '../images/logo.png';
 import mainPic from '../images/laptop1.png';
 
 
-const Qualification = () => {
+const DirectQualification = () => {
 	return (
 		<div className="quialification-container" id="top">
 			<div className="header">
@@ -118,7 +118,7 @@ const Qualification = () => {
 						</div>
 					</div>
 					<div>
-						<QualificationForm />
+						<DirectQualificationForm />
 					</div>
 				</div>
 			</div>
@@ -147,4 +147,4 @@ const Qualification = () => {
 	);
 }
 
-export default Qualification;
+export default DirectQualification;

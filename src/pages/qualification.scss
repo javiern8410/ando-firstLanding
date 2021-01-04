@@ -4,7 +4,7 @@
 .quialification-container {
     display: flex;
     flex-direction: column;
-    background-image: url("../images/office_back_2.jpg");
+    background-image: url("../images/qualification-bg.jpg");
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -13,12 +13,12 @@
     color: $color-white;
 
     &>div {
-        background-color: rgba(52, 52, 90, 0.7);
+        background-color: rgba(17, 42, 88, 0.7);
     }
 
     .main {
         flex-grow: 1;
-        background-color: rgba(52, 52, 90, 0.7);
+        // background-color: rgba(52, 52, 90, 0.7);
         display: flex;
         padding: 30px 0;
 
@@ -30,6 +30,10 @@
             grid-gap: 10px;
             justify-items: center;
             align-items: start;
+
+            .main-pic {
+                margin-bottom: 20px;
+            }
 
             ul {
                 margin: 0;
@@ -43,18 +47,22 @@
                     padding: 0 5px;
                     border-radius: 7px;
                     background-color: #f0f8ffb8;
-                    min-height: 60px;
+                    min-height: 100px;
                     box-shadow: 2px 2px 4px 1px rgba(52, 52, 54, 0.76);
                     font-size: 14px;
                     color: #2d2c2c;
-
-                    i {
-                        padding: 10px;
-                        color: #69a6ec;
+                    
+                    .bp-icon {
+                        min-width: 65px;
+                        text-align: center;
                     }
 
                     .text {
                         width: 100%;
+                    }
+
+                    i {
+                        color: #00456f;
                     }
                 }
             }
@@ -68,7 +76,7 @@
     }
 
     .header {
-        background-color: rgba(52, 52, 90, 0.7);
+        // background-color: rgba(52, 52, 90, 0.7);
         color: $color-white;
 
         .container {
@@ -127,7 +135,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: rgba(32, 32, 53, 0.8);
+        // background-color: rgba(32, 32, 53, 0.8);
         color: $color-white;
         min-height: 100px;
         padding: 20px;
@@ -143,6 +151,11 @@
 
     .emfasys {
         color: #52b1ea;
+        font-weight: 500;
+    }
+
+    .bp-emfasys {
+        color: #00456f;
         font-weight: 500;
     }
 }

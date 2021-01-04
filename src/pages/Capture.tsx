@@ -7,7 +7,23 @@ import './capture.scss';
 
 import logo from '../images/logo.png';
 
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+	gtmId: 'GTM-PV4LQ97'
+  }
+
+TagManager.initialize(tagManagerArgs);
+
 const Capture = () => {
+	(window as any).dataLayer.push({
+		event: 'pageview',
+		page: {
+		  url: window.location.href,
+		  title: "Landing inicial de conversión"
+		}
+	  });
+	
 	return (
 		<div className="capture-container" id="top">
 			<div className="header">
