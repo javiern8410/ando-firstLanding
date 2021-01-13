@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {Helmet} from "react-helmet";
+import useScript from '../hooks/useScript';
+
 import Logo from "../components/header/logo/Logo";
 import Clients from "../components/clients-comments/Clients";
 import OfferCard from '../components/offert-card/offerCard';
@@ -8,7 +11,7 @@ import './offer.scss';
 
 import logo from '../images/logo.png';
 import my_business from '../images/my-business.png';
-import video_screen from '../images/laptop1.png';
+// import video_screen from '../images/laptop1.png';
 import gdsScreen from '../images/gds-screen.png';
 import singleOpinion from '../images/single-opinion.png';
 
@@ -25,8 +28,8 @@ const cardData = [
 	},
 	{
 		icon : "fa-thumbs-o-up",
-		title : "Publicidad",
-		text : "Aumentar la popularidad de tu plataforma gracias a la facilidad que	integramos de compartir	en redes sociales."
+		title : "Soporte",
+		text : "Ofrecemos soporte de primer nivel, atendiendo reportes y a acompañando a nuestros clientes 24/7."
 	},
 	{
 		icon : "fa-shield",
@@ -59,6 +62,26 @@ const cardGds = [
 ]
 
 const Offer = () => {
+	// useScript('https://clientes.andopqsolutions.com/crmScript.js');
+
+	const mscript = `(function({d=document,s='script',id='bacrmtrk', cKey, oKey}){
+		let n, p = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		n = d.createElement(s); n.id = id;
+		n.src = "https://crm-api.eb4us.com/js/tracking.min.js";
+		n.onload = function(){__baCRMTracking.init({cKey, oKey})};
+		p.parentNode.insertBefore(n, p);
+	  }({
+		  cKey:'964d1775b722eff11b8ecd9e9ed5bd9e',
+		  oKey:'05937557e73824dd7d288c19f8597a77'
+	  }));`
+	  
+	const s = document.createElement('script');
+	s.type = 'text/javascript';
+	s.async = false;
+	s.innerHTML = mscript;
+	document.body.appendChild(s);
+
 	return (
 		<div className="offer-container" id="top">
 			<div className="header">
@@ -67,11 +90,13 @@ const Offer = () => {
 				</div>
 				<div className="container">
 					<div className="header-msg">
-						<span className="emfasys"> Video Demostrativo </span>
+						<span className="emfasys">
+							Descubre Todo el Potencial del Sistema Global de Distribución de ANDO con este...
+						</span>
 					</div>
 					<div>
 						<p className="subtitle">
-							Antes de comenzar el emocionante viaje hacia el éxito debes preguntarte...
+							Video Demostrativo
 						</p>
 					</div>
 				</div>
@@ -90,7 +115,7 @@ const Offer = () => {
 							todo <span className="emfasys strong-text"> un mes totalmente gratis </span> haciendo clic en el botón de abajo ahora.
 						</p>
 						<div className="btn-free">
-							<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">Si, Descubrir si califico para UN MES GRATIS</Link>
+							<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">¡Si, QUIERO...!</Link>
 						</div>
 					</div>
 				</div>
@@ -107,7 +132,7 @@ const Offer = () => {
 				</div>
 			</div>
 			<div className="gds-offer">
-				<div className="container">
+				<div className="container" data-aos="fade-up">
 					<div>
 						<h5 className="emfasys">
 							El Sistema GDS ANDO ha permitido a Agencias de Viajes como la Tuya los siguientes logros en Poco Tiempo:
@@ -122,45 +147,8 @@ const Offer = () => {
 					</div>
 				</div>
 			</div>
-			<div className="offer-24hrs">
-				<div className="container">
-					<p>
-						Solo de ti depende la estabilidad y el futuro de tu negocio
-					</p>
-					<p>
-						Debes saber que esta invaluable oportunidad que te ofrecemos no podemos mantenerla por mucho tiempo...
-					</p>
-					<p>
-						Solo podemos hacerlo por 24 HORAS...
-					</p>
-					<div className="offer-message">
-						¿Estoy listo para llevar <span className="emfasys"> mi negocio al próximo nivel </span> y
-						garantizar <span className="emfasys">el estilo de vida que merezco?</span>
-					</div>
-					<div className="btn-free">
-						<Link to="/qualification" className="btn-free-month">UN MES GRATIS</Link>
-					</div>
-				</div>
-			</div>
-			<div className="free-month">
-				<div className="container" data-aos="fade-up">
-					<div className="title">
-						<h1>Mes de Prueba Gratis</h1>
-					</div>
-					<div className="cards">
-						{
-							cardData.map((card, index ) => (
-								<OfferCard cardData={card} key={index} />
-							))
-						}
-					</div>
-					<div>
-						<img src={gdsScreen} className="img-fluid" alt="AndoPQ Software Solutions" width="100%" />
-					</div>
-				</div>
-			</div>
 			<div className="main testimonials">
-				<div className="container" style={{marginTop: '30px'}}  data-aos="fade-up">
+				<div className="container" data-aos="zoom-out">
 					<div>
 						<img src={singleOpinion} className="img-fluid offer-picture shadow-pic" alt="AndoPQ Software Solutions" width="460px" />
 					</div>
@@ -179,15 +167,66 @@ const Offer = () => {
 					</div>
 				</div>
 			</div>
+			<div className="free-month">
+				<div className="container" data-aos="fade-up">
+					<div className="title">
+						<h1>Mes de Prueba Gratis</h1>
+					</div>
+					<div className="cards">
+						{
+							cardData.map((card, index ) => (
+								<OfferCard cardData={card} key={index} />
+							))
+						}
+					</div>
+					<div>
+						<img src={gdsScreen} className="img-fluid" alt="AndoPQ Software Solutions" width="100%" />
+					</div>
+					<div className="btn-free">
+						<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">¡Si, QUIERO...!</Link>
+					</div>
+				</div>
+			</div>
+			<div className="offer-24hrs">
+				<div className="container">
+					<p>
+						Solo de ti depende la estabilidad y el futuro de tu negocio
+					</p>
+					<p>
+						Debes saber que esta invaluable oportunidad que te ofrecemos no podemos mantenerla por mucho tiempo...
+					</p>
+					<p>
+						Solo podemos hacerlo por 24 HORAS...
+					</p>
+					<div className="offer-message" data-aos="flip-left">
+						¿Estoy listo para llevar <span className="emfasys"> mi negocio al próximo nivel </span> y
+						garantizar <span className="emfasys">el estilo de vida que merezco?</span>
+					</div>
+					<div className="btn-free">
+						<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">¡Si, QUIERO...!</Link>
+					</div>
+				</div>
+			</div>
 			<div className="clients">
 				<div>
 					<img src={logo} alt="AndoPQ Software Solutions" width="120px" />
 				</div>
 				<div className="social-links">
-					<i className="fa fa-facebook-square fa-2x" aria-hidden="true" />
-					<i className="fa fa-twitter-square fa-2x" aria-hidden="true" />
-					<i className="fa fa-instagram fa-2x" aria-hidden="true" />
-					<i className="fa fa-youtube-play fa-2x" aria-hidden="true" />
+					<a href="https://www.facebook.com/Ando-Solutions-101795728404855" target="_blank">
+						<i className="fa fa-facebook-square fa-2x" aria-hidden="true" />
+					</a>
+					<a href="#" target="_blank">
+						<i className="fa fa-twitter-square fa-2x" aria-hidden="true" />
+					</a>
+					<a href="#" target="_blank">
+						<i className="fa fa-instagram fa-2x" aria-hidden="true" />
+					</a>
+					<a href="https://www.linkedin.com/in/ando-solutions/" target="_blank">
+						<i className="fa fa-linkedin-square fa-2x" aria-hidden="true" />
+					</a>
+					<a href="#" target="_blank">
+						<i className="fa fa-youtube-play fa-2x" aria-hidden="true" />
+					</a>
 				</div>
 				<div className="copy">
 					&copy; Copyright ©2020 Todos Los Derechos Reservados. Ando Solutions

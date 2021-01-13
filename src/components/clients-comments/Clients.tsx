@@ -24,10 +24,31 @@ const offerSettings = {
     dots: true,
 };
 
+const initialState = [
+    {
+        avatar: "7a123123dasd123128.jpg",
+        comment: "100% Recomendados, excelente producto, buen soporte y atención inmediata.",
+        name: "Alberto Perez.",
+        position: "CTO Viajes Falabela"
+    },
+    {
+        avatar: "marketing07007071.jpg",
+        comment: "Muy buen servicio, excelente para crecer en el negocio.",
+        name: "Martha A. Sánchez.",
+        position: "Comunity Manager at Infinity Sales"
+    },
+    {
+        avatar: "officeback342342.jpg",
+        comment: "Sistema eficiente con todo lo que necesita una agencia.",
+        name: "John Smeltzer.",
+        position: "Account Manager at Activate Soft"
+    }
+]
+
 SwiperCore.use([Navigation, Pagination]);
 
 const Clients: React.FunctionComponent<any> = ({ page }) => {
-    const [comments, setComments] = useState([]);
+    const [comments, setComments] = useState(initialState);
     const [loading, setLoading] = useState(false);
 
 
@@ -42,7 +63,7 @@ const Clients: React.FunctionComponent<any> = ({ page }) => {
 
     const settings = getSettings(page)
 
-    const getComments = async () => {
+    /* const getComments = async () => {
         try {
             setLoading(true);
             const fbComents: any = [];
@@ -56,11 +77,11 @@ const Clients: React.FunctionComponent<any> = ({ page }) => {
             console.log(error);
             setLoading(false);
         }
-    };
+    }; */
 
-    useEffect(() => {
+    /* useEffect(() => {
         getComments();
-    }, []);
+    }, []); */
 
     return (
         <div className="clients-comments">

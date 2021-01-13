@@ -1,4 +1,4 @@
-import React, { useState, FunctionComponent } from "react";
+import React, { useState, FunctionComponent, useRef } from "react";
 import MyModal from '../modal/Modal'
 import FormData from 'form-data';
 import { ApiClient } from '../../clients/api.client';
@@ -18,7 +18,9 @@ const QualificationForm: FunctionComponent<any> = () => {
 	const [loading, setLoading] = useState(false);
 	const [captured, setCaptured] = useState(false)
 
-	const handleSubmit = async (event: any) => {
+	const qualificationForm : any = useRef(null);
+
+	/* const handleSubmit = async (event: any) => {
 		event.preventDefault();
 		const formData: any = new FormData(event.target);
 
@@ -47,6 +49,12 @@ const QualificationForm: FunctionComponent<any> = () => {
 			setLoading(false);
 			setError(true);
 		}
+	} */
+
+	const handleSubmit = (event: any) => {
+		setLoading(true);
+		event.preventDefault();
+		qualificationForm.current.submit();	
 	}
 
 	const handleChange = (event: any) => {
@@ -60,14 +68,14 @@ const QualificationForm: FunctionComponent<any> = () => {
 
 	return (
 		<div className="quialification-form" id="capture-form">
-			{/* <form id="capture" target="_blank" method="post" action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe"> */}
-			<form id="capture" method="post" onSubmit={handleSubmit}>
+			<form ref={qualificationForm} id="qualification" onSubmit={handleSubmit} target="_self" method="post" action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe">
+			{/* <form id="capture" method="post" onSubmit={handleSubmit}> */}
 				<div className="form-title">
 					<h6 className="emfasis">
 						¡DESCUBRE LA POTENCIA QUE LE DAMOS A TU NEGOCIO!
 					</h6>
 					<p>
-						Accede al demo que hemos preparado exclusivamente apara ti ahora.
+						Completa este Formulario y Descubre si Calificas para Probar Tu Sistema Personalizado de Reservas por 30 días Sin Costo Alguno.
 					</p>
 				</div>
 				<div className="form-body">
@@ -376,8 +384,8 @@ const QualificationForm: FunctionComponent<any> = () => {
 										<span className="sr-only">Loading...</span>
 									</div>
 								) : (
-										'Enviar'
-									)
+									'¡Si, Quiero Descubrir si Califico para la Prueba de 30 Días Sin Costo!'
+								)
 							}
 						</button>
 					</div>

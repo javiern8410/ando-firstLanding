@@ -1,4 +1,4 @@
-import React, { useState, FunctionComponent } from "react";
+import React, { useState, FunctionComponent, useRef } from "react";
 import "./quialification-form.scss";
 
 const initialState = {
@@ -12,16 +12,25 @@ const initialState = {
 const DirectQualificationForm: FunctionComponent<any> = () => {
 	const [clientData, setClientData] = useState(initialState)
 
+	const [loading, setLoading] = useState(false);
+
+	const qualificationForm : any = useRef(null);
 
 	const handleChange = (event: any) => {
 		const { name, value } = event.target;
 		setClientData({ ...clientData, [name]: value });
 	}
 
+	const handleSubmit = (event: any) => {
+		setLoading(true);
+		event.preventDefault();
+		qualificationForm.current.submit();	
+	}
+
 	return (
 		<div className="quialification-form" id="capture-form">
 			{/* <form id="capture" target="_blank" method="post" action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe"> */}
-			<form id="capture" method="post" action="https://member.mailingboss.com/index.php/lists/qm01965hyn1fc/subscribe" accept-charset="utf-8" target="_blank">
+			<form ref={qualificationForm}  id="direct-qualification" method="post" onSubmit={handleSubmit} action="https://member.mailingboss.com/index.php/lists/qm01965hyn1fc/subscribe" accept-charset="utf-8" target="_self">
 				<div className="form-title">
 					<h6 className="emfasis">
 						¡DESCUBRE LA POTENCIA QUE LE DAMOS A TU NEGOCIO!
@@ -322,8 +331,16 @@ const DirectQualificationForm: FunctionComponent<any> = () => {
 						
 					</div>
 					<div>
-						<button type="submit" className={`btn-free-month-md`}>
-							Calificar para mes GRATIS
+						<button type="submit" className={`btn-free-month-md  ${loading ? '-loading' : ''}`}>
+							{
+								loading ? (
+									<div className="spinner-border text-light" role="status">
+										<span className="sr-only">Loading...</span>
+									</div>
+								) : (
+									'Calificar para mes GRATIS'
+								)
+							}
 						</button>
 					</div>
 				</div>

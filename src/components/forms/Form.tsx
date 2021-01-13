@@ -1,4 +1,4 @@
-import React, { useState, FunctionComponent } from "react";
+import React, { useState, FunctionComponent, useRef } from "react";
 import MyModal from '../modal/Modal'
 import FormData from 'form-data';
 import { ApiClient } from '../../clients/api.client';
@@ -16,7 +16,9 @@ const Form: FunctionComponent<any> = () => {
 	const [loading, setLoading] = useState(false);
 	const [captured, setCaptured] = useState(false)
 
-	const handleSubmit = async (event: any) => {
+	const captureForm : any = useRef(null);
+
+	/* const handleSubmit = async (event: any) => {
 		event.preventDefault();
 		const formData: any = new FormData(event.target);
 
@@ -45,6 +47,12 @@ const Form: FunctionComponent<any> = () => {
 			setLoading(false);
 			setError(true);
 		}
+	} */
+
+	const handleSubmit = (event: any) => {
+		setLoading(true);
+		event.preventDefault();
+		captureForm.current.submit();	
 	}
 
 	const handleChange = (event: any) => {
@@ -59,13 +67,15 @@ const Form: FunctionComponent<any> = () => {
 	return (
 		<div className="form-container" id="capture-form">
 			{/* <form id="capture" target="_blank" method="post" action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe"> */}
-			<form id="capture" method="post" onSubmit={handleSubmit}>
+			{/* <form data-v-64754bc8="" method="post" action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe" target="_self" ba-crm-id="baa906151736cc495243b4b75a760e6111b7a911"> */}
+			<form ref={captureForm} method="post" onSubmit={handleSubmit} action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe" target="_self">
+			{/* <form id="capture" method="post" onSubmit={handleSubmit}> */}
 				<div className="form-title">
 					<h6 className="emfasis">
 						¡DESCUBRE LA POTENCIA QUE LE DAMOS A TU NEGOCIO!
 					</h6>
 					<h3 style={{textAlign: 'center', margin: '15px'}}>
-						Accede al demo que hemos preparado exclusivamente para ti ahora.
+						Completa este Formulario y Accede al Video Demo que hemos preparado para ti Totalmente Gratis.
 					</h3>
 				</div>
 				<div className="form-body">

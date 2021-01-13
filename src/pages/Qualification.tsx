@@ -1,4 +1,6 @@
 import React from 'react';
+import useScript from '../hooks/useScript';
+
 import Logo from "../components/header/logo/Logo";
 import QualificationForm from "../components/forms/QualificationForm";
 import Clients from "../components/clients-comments/Clients";
@@ -10,6 +12,26 @@ import mainPic from '../images/laptop1.png';
 
 
 const Qualification = () => {
+	// useScript('https://clientes.andopqsolutions.com/crmScript.js');
+
+	const mscript = `(function({d=document,s='script',id='bacrmtrk', cKey, oKey}){
+		let n, p = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		n = d.createElement(s); n.id = id;
+		n.src = "https://crm-api.eb4us.com/js/tracking.min.js";
+		n.onload = function(){__baCRMTracking.init({cKey, oKey})};
+		p.parentNode.insertBefore(n, p);
+	  }({
+		  cKey:'964d1775b722eff11b8ecd9e9ed5bd9e',
+		  oKey:'05937557e73824dd7d288c19f8597a77'
+	  }));`
+	  
+	const s = document.createElement('script');
+	s.type = 'text/javascript';
+	s.async = false;
+	s.innerHTML = mscript;
+	document.body.appendChild(s);
+
 	return (
 		<div className="quialification-container" id="top">
 			<div className="header">
@@ -19,7 +41,7 @@ const Qualification = () => {
 						Estás a un paso de obtener...
 					</div>
 					<div className="header-msg">
-						Tu propio <span className="emfasys"> Sistema de Reservas </span>
+						Tu propio <span className="emfasys"> Sistema de Reservas Sin Costo por 30 Días</span>
 					</div>
 					<div className="slogan">
 						Con toda honestidad te decimos que este puede ser el paso de avance más importante de tu negocio este año.
@@ -133,10 +155,21 @@ const Qualification = () => {
 					<img src={logo} alt="AndoPQ Software Solutions" width="120px" />
 				</div>
 				<div className="social-links">
-					<i className="fa fa-facebook-square fa-2x" aria-hidden="true" />
-					<i className="fa fa-twitter-square fa-2x" aria-hidden="true" />
-					<i className="fa fa-instagram fa-2x" aria-hidden="true" />
-					<i className="fa fa-youtube-play fa-2x" aria-hidden="true" />
+					<a href="https://www.facebook.com/Ando-Solutions-101795728404855" target="_blank">
+						<i className="fa fa-facebook-square fa-2x" aria-hidden="true" />
+					</a>
+					<a href="#" target="_blank">
+						<i className="fa fa-twitter-square fa-2x" aria-hidden="true" />
+					</a>
+					<a href="#" target="_blank">
+						<i className="fa fa-instagram fa-2x" aria-hidden="true" />
+					</a>
+					<a href="https://www.linkedin.com/in/ando-solutions/" target="_blank">
+						<i className="fa fa-linkedin-square fa-2x" aria-hidden="true" />
+					</a>
+					<a href="#" target="_blank">
+						<i className="fa fa-youtube-play fa-2x" aria-hidden="true" />
+					</a>
 				</div>
 				<div>
 					&copy; Copyright 2020 Ando Solutions
