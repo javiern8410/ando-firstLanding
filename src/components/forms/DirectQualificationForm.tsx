@@ -29,7 +29,6 @@ const DirectQualificationForm: FunctionComponent<any> = () => {
 
 	return (
 		<div className="quialification-form" id="capture-form">
-			{/* <form id="capture" target="_blank" method="post" action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe"> */}
 			<form ref={qualificationForm}  id="direct-qualification" method="post" onSubmit={handleSubmit} action="https://member.mailingboss.com/index.php/lists/qm01965hyn1fc/subscribe" accept-charset="utf-8" target="_self">
 				<div className="form-title">
 					<h6 className="emfasis">

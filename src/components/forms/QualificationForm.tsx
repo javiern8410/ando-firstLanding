@@ -1,7 +1,4 @@
 import React, { useState, FunctionComponent, useRef } from "react";
-import MyModal from '../modal/Modal'
-import FormData from 'form-data';
-import { ApiClient } from '../../clients/api.client';
 import "./quialification-form.scss";
 
 const initialState = {
@@ -16,40 +13,8 @@ const QualificationForm: FunctionComponent<any> = () => {
 	const [clientData, setClientData] = useState(initialState)
 	const [error, setError] = useState(false)
 	const [loading, setLoading] = useState(false);
-	const [captured, setCaptured] = useState(false)
 
 	const qualificationForm : any = useRef(null);
-
-	/* const handleSubmit = async (event: any) => {
-		event.preventDefault();
-		const formData: any = new FormData(event.target);
-
-		try {
-			setLoading(true);
-			setError(false);
-			if (
-				!clientData.FNAME ||
-				!clientData.EMAIL ||
-				!clientData.TEXT
-			) {
-				throw new Error("EmptyField");
-			} else {
-				const url = "https://member.mailingboss.com/index.php/lists/er595zp3j0e78/subscribe";
-				const response = await ApiClient.subscribe(url, formData);
-				if (response && response.status === 0) {
-					setCaptured(true);
-				}
-				setLoading(false);
-				const form: any = document.getElementById("capture");
-				form && form.reset();
-			}
-
-		} catch (error) {
-			console.log(error);
-			setLoading(false);
-			setError(true);
-		}
-	} */
 
 	const handleSubmit = (event: any) => {
 		setLoading(true);
@@ -62,14 +27,9 @@ const QualificationForm: FunctionComponent<any> = () => {
 		setClientData({ ...clientData, [name]: value });
 	}
 
-	const handleClose = () => {
-		setCaptured(false);
-	}
-
 	return (
 		<div className="quialification-form" id="capture-form">
 			<form ref={qualificationForm} id="qualification" onSubmit={handleSubmit} target="_self" method="post" action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe">
-			{/* <form id="capture" method="post" onSubmit={handleSubmit}> */}
 				<div className="form-title">
 					<h6 className="emfasis">
 						¡DESCUBRE LA POTENCIA QUE LE DAMOS A TU NEGOCIO!
@@ -390,9 +350,6 @@ const QualificationForm: FunctionComponent<any> = () => {
 						</button>
 					</div>
 				</div>
-				{
-					captured && <MyModal clientData={clientData} showModal={captured} handleClose={handleClose} />
-				}
 			</form>
 		</div>
 	);

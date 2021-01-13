@@ -4,7 +4,6 @@ import { createBrowserHistory } from 'history';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import './firebase';
 
 const history = createBrowserHistory();
 

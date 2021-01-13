@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {Helmet} from "react-helmet";
 import useScript from '../hooks/useScript';
 
 import Logo from "../components/header/logo/Logo";
@@ -148,7 +147,7 @@ const Offer = () => {
 				</div>
 			</div>
 			<div className="main testimonials">
-				<div className="container" data-aos="zoom-out">
+				<div className="container">
 					<div>
 						<img src={singleOpinion} className="img-fluid offer-picture shadow-pic" alt="AndoPQ Software Solutions" width="460px" />
 					</div>

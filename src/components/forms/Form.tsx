@@ -1,7 +1,4 @@
 import React, { useState, FunctionComponent, useRef } from "react";
-import MyModal from '../modal/Modal'
-import FormData from 'form-data';
-import { ApiClient } from '../../clients/api.client';
 import "./form.scss";
 
 const initialState = {
@@ -14,40 +11,8 @@ const Form: FunctionComponent<any> = () => {
 	const [clientData, setClientData] = useState(initialState)
 	const [error, setError] = useState(false)
 	const [loading, setLoading] = useState(false);
-	const [captured, setCaptured] = useState(false)
 
 	const captureForm : any = useRef(null);
-
-	/* const handleSubmit = async (event: any) => {
-		event.preventDefault();
-		const formData: any = new FormData(event.target);
-
-		try {
-			setLoading(true);
-			setError(false);
-			if (
-				!clientData.FNAME ||
-				!clientData.EMAIL ||
-				!clientData.TEXT
-			) {
-				throw new Error("EmptyField");
-			} else {
-				const url = "https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe";
-				const response = await ApiClient.subscribe(url, formData);
-				if (response && response.status === 0) {
-					setCaptured(true);
-				}
-				setLoading(false);
-				const form: any = document.getElementById("capture");
-				form && form.reset();
-			}
-
-		} catch (error) {
-			console.log(error);
-			setLoading(false);
-			setError(true);
-		}
-	} */
 
 	const handleSubmit = (event: any) => {
 		setLoading(true);
@@ -60,16 +25,9 @@ const Form: FunctionComponent<any> = () => {
 		setClientData({ ...clientData, [name]: value });
 	}
 
-	const handleClose = () => {
-		setCaptured(false);
-	}
-
 	return (
 		<div className="form-container" id="capture-form">
-			{/* <form id="capture" target="_blank" method="post" action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe"> */}
-			{/* <form data-v-64754bc8="" method="post" action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe" target="_self" ba-crm-id="baa906151736cc495243b4b75a760e6111b7a911"> */}
 			<form ref={captureForm} method="post" onSubmit={handleSubmit} action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe" target="_self">
-			{/* <form id="capture" method="post" onSubmit={handleSubmit}> */}
 				<div className="form-title">
 					<h6 className="emfasis">
 						¡DESCUBRE LA POTENCIA QUE LE DAMOS A TU NEGOCIO!
@@ -124,9 +82,6 @@ const Form: FunctionComponent<any> = () => {
 						}
 					</button>
 				</div>
-				{
-					captured && <MyModal clientData={clientData} showModal={captured} handleClose={handleClose} />
-				}
 			</form>
 		</div>
 	);
