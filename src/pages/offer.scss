@@ -276,7 +276,7 @@
         justify-content: center;
         align-items: center;
         min-height: 150px;
-        padding: 10px;
+        padding: 30px;
         // background-color: #c8effc;
         background-color: #fffffff3;
 
@@ -368,6 +368,7 @@
     }
 
     .btn-free-month {
+        text-align: center;
         border-radius: 25px;
         border: 0;
         padding: 10px 35px;
@@ -375,9 +376,6 @@
         color: $color-white;
         outline: 0;
         text-decoration: none;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
         max-width: 400px;
 
         &:hover {

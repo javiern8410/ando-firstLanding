@@ -6,7 +6,7 @@ import ToTopBtn from "../components/totopbtn/ToTopBtn";
 import './thanks.scss';
 
 import logo from '../images/logo.png';
-import my_business from '../images/vacations.jpg';
+import my_business from '../images/congratulation-call.jpg';
 
 const Thanks: FunctionComponent<any> = ({step}) => {
 
@@ -29,8 +29,6 @@ const Thanks: FunctionComponent<any> = ({step}) => {
 	s.async = false;
 	s.innerHTML = mscript;
 	document.body.prepend(s);
-
-	console.log(step);
 	
 	return (
 		<div className="thanks-container" id="top">
@@ -42,53 +40,66 @@ const Thanks: FunctionComponent<any> = ({step}) => {
 			<div className="main">
 				<div className="container">
 					<div className="header-msg">
-						<span className="emfasys"> Hemos Recibido Tu Solicitud Con Éxito! </span>
+						<span className="emfasys"> Has Agendado Tu Llamada Con Éxito! </span>
 					</div>
 				</div>
 				<div className="container">
 					<div className="main-subtitle">
-						{
-							(step !== '' && step === "capture") ? (
-								'En menos de 15 minutos Recibirás un Email con el Acceso a Tu Video Demostrativo GRATUITO Sobre la Plataforma de Gestión.'
-							) : (
-								'En menos de 15 minutos Recibirás un Email donde estaremos explicándote los próximos pasos una vez califiques para Tu Prueba de 30 días Gratis.'
-							)
-						}
+                        Al llamarte te estaremos dando la noticia sobre tu calificación para probar el Sistema Global de Reservas de ANDO Solutions.
 					</div>
 				</div>
 				<div className="container">
 					<div className="email-steps">
 						<p>
-							Para garantizar que recibas nuestro correo sin problemas haz lo siguiente:
+                            <h3>
+                                Te recomendamos lo siguiente: 
+                            </h3>
 						</p>
 						<ul>
 							<li>
+                                <div className="cards-number">
+                                    1
+                                </div>
 								<div className="bp-icon">
 									<i className="fa fa-envelope-o fa-2x" aria-hidden="true" />
 								</div>
-								Ve a tu bandeja de entrada. Si no encuentras nuestro correo
-								Jose Manuel (Ando Solutions) revisa en las bandejas de spam y promociones, a veces van allí los correos. 
+								Te enviaremos un mensaje informándote los detalles, la hora y día de la llamada. 
 							</li>
-							<li>
+							<li style={{backgroundColor: '#bde0ff'}}>
+                                <div className="cards-number">
+                                    2
+                                </div>
+								<div className="bp-icon">
+									<i className="fa fa-calendar fa-2x" aria-hidden="true" />
+								</div>
+                                Te haremos un recordatorio 1 hora antes.
+							</li>
+                            <li style={{backgroundColor: '#a7d3f9'}}>
+                                <div className="cards-number">
+                                    3
+                                </div>
 								<div className="bp-icon">
 									<i className="fa fa-address-card fa-2x" aria-hidden="true" />
 								</div>
-								Agréganos a tu lista de remitentes
+                                Te enviaremos un documento con los temas de la entrevista, en aras que te prepares para ahorrarte tiempo.
 							</li>
+                            
 						</ul>
 						<h5>
-							Una Última Sugerencia....
+							Te deseamos Éxitos!
 						</h5>
 						<ul>
-							<li>
+							<li className="ando-team">
 								<div className="bp-icon">
 									<i className="fa fa-users fa-2x" aria-hidden="true" />
 								</div>
-								Visita nuestra página de Facebook dónde encontrarás mucha información de gran utilidad.
+                                <a href="https://www.facebook.com/Ando-Solutions-101795728404855" target="_blank">
+								    Equipo ANDO Solutions.
+                                </a>
 							</li>
 						</ul>
 					</div>
-					<div className="offer-video">
+					<div className="offer-video" style={{alignSelf: 'center'}}>
 						<img src={my_business} className="img-fluid vacation-pic" alt="AndoPQ Software Solutions" width="460px" height="auto" />
 					</div>
 				</div>
@@ -98,19 +109,19 @@ const Thanks: FunctionComponent<any> = ({step}) => {
 					<img src={logo} alt="AndoPQ Software Solutions" width="120px" />
 				</div>
 				<div className="social-links">
-					<a href="https://www.facebook.com/Ando-Solutions-101795728404855" target="_blank" rel="noopener noreferrer">
+					<a href="https://www.facebook.com/Ando-Solutions-101795728404855" target="_blank">
 						<i className="fa fa-facebook-square fa-2x" aria-hidden="true" />
 					</a>
-					<a href="#" target="_blank" rel="noopener noreferrer">
+					<a href="#" target="_blank">
 						<i className="fa fa-twitter-square fa-2x" aria-hidden="true" />
 					</a>
-					<a href="#" target="_blank" rel="noopener noreferrer">
+					<a href="#" target="_blank">
 						<i className="fa fa-instagram fa-2x" aria-hidden="true" />
 					</a>
-					<a href="https://www.linkedin.com/in/ando-solutions/" target="_blank" rel="noopener noreferrer">
+					<a href="https://www.linkedin.com/in/ando-solutions/" target="_blank">
 						<i className="fa fa-linkedin-square fa-2x" aria-hidden="true" />
 					</a>
-					<a href="#" target="_blank" rel="noopener noreferrer">
+					<a href="#" target="_blank">
 						<i className="fa fa-youtube-play fa-2x" aria-hidden="true" />
 					</a>
 				</div>

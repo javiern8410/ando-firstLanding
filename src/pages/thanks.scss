@@ -35,7 +35,7 @@
                 color: #152b9c;
                 font-size: 24px;
                 text-align: center;
-                padding: 20px 0 50px 0;
+                padding: 20px 20px 50px 20px;
             }
 
             .header-msg {
@@ -196,6 +196,20 @@
         font-weight: 500;
     }
 
+    a {
+        text-decoration: none;
+    }
+
+    .ando-team {
+        /* background: url('../images/programmatore.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: revert;
+        background-clip: border-box; */
+        display: flex;
+        justify-content: center;
+    }
+
     .btn-free-month {
         border-radius: 25px;
         border: 0;
@@ -209,9 +223,21 @@
             box-shadow: 0 0 4px 1px #757171ba;
         }
     }
+
+    .cards-number {
+        font-size: 38px;
+        margin: 0 0 0 10px;
+        font-weight: bold;
+    }
 }
 
 @media (max-width: 500px) {
+    .thanks-container .main .container .main-subtitle {
+        color: #152b9c;
+        font-size: 24px;
+        text-align: center;
+        padding: 20px 0px 50px 0px;
+    }
     .offer-container .offer-24hrs .container .offer-message {
         width: 90%;
         min-height: 165px;

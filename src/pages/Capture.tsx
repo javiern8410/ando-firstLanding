@@ -59,7 +59,7 @@ const Capture = () => {
 					</div>
 					<div>
 						<p className="subtitle">
-							!Gana más Clientes y consigue Más Ventas a través de una Plataforma de Clase Mundial 
+							¡Gana más Clientes y consigue Más Ventas a través de una Plataforma de Clase Mundial 
 							que podemos construir Exclusivamente para tu Agencia de Viajes sin que te cueste un Solo Céntimo!
 						</p>
 					</div>

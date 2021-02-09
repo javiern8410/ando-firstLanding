@@ -29,7 +29,9 @@ const QualificationForm: FunctionComponent<any> = () => {
 
 	return (
 		<div className="quialification-form" id="capture-form">
-			<form ref={qualificationForm} id="qualification" onSubmit={handleSubmit} target="_self" method="post" action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe">
+			{/* <form target="_self" method="post" action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe"> */}
+			{/* <form ref={qualificationForm} id="qualification" onSubmit={handleSubmit} action="https://member.mailingboss.com/index.php/lists/er595zp3j0e78/subscribe" method="post" accept-charset="utf-8" target="_self"> */}
+			<form ref={qualificationForm} id="qualification" onSubmit={handleSubmit} action="https://member.mailingboss.com/index.php/lists/er595zp3j0e78/subscribe" method="post" accept-charset="utf-8" target="_self" ba-crm-id="567b60661693f2f55941d30ebe37ac183626474a">
 				<div className="form-title">
 					<h6 className="emfasis">
 						¡DESCUBRE LA POTENCIA QUE LE DAMOS A TU NEGOCIO!
@@ -293,17 +295,17 @@ const QualificationForm: FunctionComponent<any> = () => {
 					<div className="form-group">
 						<div className="form-check">
 							<label className="form-check-label clickable">
-								<input type="radio" defaultChecked className="form-check-input " name="NUMBER" value="10000" onChange={handleChange} /> Menos de 10000
+								<input type="checkbox" defaultChecked className="form-check-input " name="NUMBER[]" id="NUMBER_0" value="1" onChange={handleChange} /> Menos de 10000
  							</label>
 						</div>
 						<div className="form-check">
 							<label className="form-check-label clickable">
-								<input type="radio" className="form-check-input" name="NUMBER" value="10000-50000" onChange={handleChange} /> De 10000 a 50000
+								<input type="checkbox" className="form-check-input" name="NUMBER[]" id="NUMBER_1" value="2" onChange={handleChange} /> De 10000 a 50000
 							</label>
 						</div>
 						<div className="form-check">
 							<label className="form-check-label clickable">
-								<input type="radio" className="form-check-input" name="NUMBER" value="+50000" onChange={handleChange} /> Mas de 50000
+								<input type="checkbox" className="form-check-input" name="NUMBER[]" id="NUMBER_2" value="3" onChange={handleChange} /> Mas de 50000
 							</label>
 						</div>
 					</div>

@@ -111,10 +111,10 @@ const Offer = () => {
 						<h5 className="emfasys">El Mejor Momento es HOY...</h5>
 						<p className="subtitle">
 							Descubre <span className="strong-text"> Si Calificas </span> para probar <span className="emfasys"> tu propia plataforma de reservas </span> durante
-							todo <span className="emfasys strong-text"> un mes totalmente gratis </span> haciendo clic en el botón de abajo ahora.
+							todo <span className="emfasys strong-text"> un mes totalmente gratis </span> haciendo Clic en el Botón de abajo AHORA.
 						</p>
 						<div className="btn-free">
-							<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">¡Si, QUIERO...!</Link>
+							<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">¡Si, Quiero Descubrir Si Califico para la Prueba de Un Mes GRATIS!</Link>
 						</div>
 					</div>
 				</div>
@@ -182,7 +182,9 @@ const Offer = () => {
 						<img src={gdsScreen} className="img-fluid" alt="AndoPQ Software Solutions" width="100%" />
 					</div>
 					<div className="btn-free">
-						<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">¡Si, QUIERO...!</Link>
+						<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">
+							¡Si, Quiero Descubrir Si Califico para la Prueba de Un Mes GRATIS!
+						</Link>
 					</div>
 				</div>
 			</div>
@@ -202,7 +204,9 @@ const Offer = () => {
 						garantizar <span className="emfasys">el estilo de vida que merezco?</span>
 					</div>
 					<div className="btn-free">
-						<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">¡Si, QUIERO...!</Link>
+						<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">
+							¡Si, Quiero Descubrir Si Califico para la Prueba de Un Mes GRATIS!
+						</Link>
 					</div>
 				</div>
 			</div>
