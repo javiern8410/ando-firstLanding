@@ -29,7 +29,7 @@ const Form: FunctionComponent<any> = () => {
 		<div className="form-container" id="capture-form">
 			<form ref={captureForm} method="post" onSubmit={handleSubmit} action="https://member.mailingboss.com/index.php/lists/ej357jcez2756/subscribe" target="_self">
 				<div className="form-title">
-					<h6 className="emfasis">
+					<h6 className="emfasis" style={{fontSize: '1.8em'}}>
 						¡DESCUBRE LA POTENCIA QUE LE DAMOS A TU NEGOCIO!
 					</h6>
 					<h3 style={{textAlign: 'center', margin: '15px'}}>

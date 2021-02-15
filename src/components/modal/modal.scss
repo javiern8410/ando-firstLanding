@@ -1,0 +1,12 @@
+.modal-component {
+    .modal-dialog {
+        max-width: 1000px !important;
+        width: 100%;
+    }
+    .video{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 575px;
+    }
+}

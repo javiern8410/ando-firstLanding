@@ -1,44 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useScript from '../hooks/useScript';
+// import useScript from '../hooks/useScript';
 
 import Logo from "../components/header/logo/Logo";
 import Clients from "../components/clients-comments/Clients";
 import OfferCard from '../components/offert-card/offerCard';
+import Modal from '../components/modal/Modal';
+import FooterLinks from '../components/footer/FooterLinks';
 import ToTopBtn from "../components/totopbtn/ToTopBtn";
 import './offer.scss';
 
-import logo from '../images/logo.png';
-import my_business from '../images/my-business.png';
-// import video_screen from '../images/laptop1.png';
+import my_business from '../images/ando-team.jpg';
 import gdsScreen from '../images/gds-screen.png';
-import singleOpinion from '../images/single-opinion.png';
+import teamTwo from '../images/ando-team2.jpeg';
+// import video_screen from '../images/laptop1.png';
+// import singleOpinion from '../images/single-opinion.png';
+// import videoMonitor from '../images/video-monitor.png';
 
 const cardData = [
 	{
 		icon : "fa-area-chart",
-		title : "Ofertas",
-		text : "Ampliar tus ofertas a precios muy competitivos tomando ventaja de las integraciones que	ponemos a tu disposición."
-	},
-	{
-		icon : "fa-puzzle-piece",
-		title : "Servicios",
-		text : "Dar un servicio de reservas al estilo de los grandes."
-	},
-	{
-		icon : "fa-thumbs-o-up",
-		title : "Soporte",
-		text : "Ofrecemos soporte de primer nivel, atendiendo reportes y a acompañando a nuestros clientes 24/7."
-	},
-	{
-		icon : "fa-shield",
-		title : "Seguridad",
-		text : "Dar credibilidad incuestionable de un servicio altamente seguro	y eficiente."
+		title : "Garantizar",
+		text : "Mayor retención de Clientes y Más Ventas a través de confirmaciones automáticas y Gestión Automatizada de la Disponibilidad."
 	},
 	{
 		icon : "fa-line-chart",
-		title : "Ventas",
-		text : "Potenciar tus ventas a niveles nunca pensados."
+		title : "Crecer",
+		text : "Usando todas las Funcionalidades de nuestra Plataforma entre las que están: Reservas,  Facturación y Cobro, Informes Operacionales… y Más."
+	},
+	{
+		icon : "fa-globe",
+		title : "Globalizar",
+		text : "Tus ventas mediante funcionamiento las 24 horas tomando ventaja de una Plataforma GDS totalmente integrada y automatizada."
+	},
+	{
+		icon : "fa-cogs",
+		title : "Mantener",
+		text : "Toda la operación de Tu Agencia sin interrupciones gracias a nuestro Soporte 24/7."
+	},
+	{
+		icon : "fa-rocket",
+		title : "Competir",
+		text : "Al estilo de los Grandes con un Sistema Seguro, Intuitivo y Profesional, adaptado para todo tipo de dispositivos."
 	}
 ];
 
@@ -63,6 +66,12 @@ const cardGds = [
 const Offer = () => {
 	// useScript('https://clientes.andopqsolutions.com/crmScript.js');
 
+	const [showModal, setShowModal] = useState(false);
+
+	const handleClose = () => {
+		setShowModal(false);
+	}
+
 	const mscript = `(function({d=document,s='script',id='bacrmtrk', cKey, oKey}){
 		let n, p = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) {return;}
@@ -83,49 +92,60 @@ const Offer = () => {
 
 	return (
 		<div className="offer-container" id="top">
-			<div className="header">
-				<div className="header-top">
-					<Logo />
-				</div>
-				<div className="container">
-					<div className="header-msg">
-						<span className="emfasys">
-							Descubre Todo el Potencial del Sistema Global de Distribución de ANDO con este...
-						</span>
-					</div>
-					<div>
-						<p className="subtitle">
-							Video Demostrativo
-						</p>
+			<Modal showModal={showModal} handleClose={handleClose}>
+				<iframe width="100%" height="100%" src="https://videomng.builderall.com/embed/LkcwiPNHIX/?autoplay=1&countdown=1&controls=1&allowpause=1&loop=0" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Oferta Sistema GDS"></iframe>
+			</Modal>
+			<div className="offer-header">
+				<div className="backG"></div>
+				<div className="header">
+					<div className="header-top">
+						<Logo />
 					</div>
 				</div>
-			</div>
-			<div className="main">
-				<div className="container">
-					<div className="offer-picture">
-						<img src={my_business} className="img-fluid" alt="AndoPQ Software Solutions" width="460px" />
-					</div>
-					<div className="offer-video">
-						<iframe className="video" src="https://www.youtube.com/embed/C7whcHmiaN8" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Oferta Sistema GDS"></iframe>
-
-						<h5 className="emfasys">El Mejor Momento es HOY...</h5>
-						<p className="subtitle">
-							Descubre <span className="strong-text"> Si Calificas </span> para probar <span className="emfasys"> tu propia plataforma de reservas </span> durante
-							todo <span className="emfasys strong-text"> un mes totalmente gratis </span> haciendo Clic en el Botón de abajo AHORA.
-						</p>
-						<div className="btn-free">
-							<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">¡Si, Quiero Descubrir Si Califico para la Prueba de Un Mes GRATIS!</Link>
+				<div className="main">
+					<div className="container">
+						<div className="offer-msg">
+							<div className="header-msg">
+								<span className="emfasys">
+									Software #1 GDS Personalizado para Agencias de Viajes.
+								</span>
+							</div>
+							<div className="header-msg2">
+								<span className="emfasys2">
+									Todo un Mes de Prueba Sin Costo
+								</span>
+							</div>
+							<div>
+								<p className="subtitle">
+									Visualiza con este Video un Nuevo Futuro para Tu Negocio… Para lo que Amas…
+								</p>
+							</div>
+							<div className="arrow">
+								<i className="fa fa-arrow-down fa-3x" aria-hidden="true" style={{fontWeight: 'lighter', color: '#e1e3ec'}} />
+							</div>
+						</div>
+						<div className="offer-video">
+							{/* <iframe className="video" src="https://www.youtube.com/embed/C7whcHmiaN8" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Oferta Sistema GDS"></iframe> */}
+							<div className="video">
+								<i onClick={() => setShowModal(true)} className="fa fa-play-circle-o fa-5x" aria-hidden="true" style={{cursor: 'pointer', color: '#0bbde6', margin: '0 auto'}} />
+							</div>
+							<h5 style={{fontSize: '2rem', color: 'black'}}>El Mejor Momento es HOY...</h5>
+							<p className="subtitle">
+								Descubre <span className="strong-text"> Si Calificas </span> para probar <span className="strong-text"> tu propia plataforma de reservas </span> durante
+							 <span className="strong-text"> un mes totalmente gratis </span> haciendo Clic en el Botón de abajo AHORA.
+							</p>
+							<div className="btn-free">
+								<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">¡Si, Quiero Descubrir Si Califico para la Prueba de Un Mes GRATIS!</Link>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			
 			<div className="clients vip">
 				<div className="container">
-					<div className="title white">
-						Nos sentimos orgullosos del
-					</div>
-					<div className="title emfasys">
-						éxito de nuestros asociados
+					<div className="title">
+						Nos sentimos orgullosos del éxito de nuestros asociados.
 					</div>
 					<Clients page="offer" />
 				</div>
@@ -133,7 +153,7 @@ const Offer = () => {
 			<div className="gds-offer">
 				<div className="container" data-aos="fade-up">
 					<div>
-						<h5 className="emfasys">
+						<h5 className="emfasys3" style={{textAlign: 'center'}}>
 							El Sistema GDS ANDO ha permitido a Agencias de Viajes como la Tuya los siguientes logros en Poco Tiempo:
 						</h5>
 					</div>
@@ -146,10 +166,10 @@ const Offer = () => {
 					</div>
 				</div>
 			</div>
-			<div className="main testimonials">
+			<div className="testimonials">
 				<div className="container">
 					<div>
-						<img src={singleOpinion} className="img-fluid offer-picture shadow-pic" alt="AndoPQ Software Solutions" width="460px" />
+						<img src={teamTwo} className="img-fluid offer-picture shadow-pic" alt="AndoPQ Software Solutions" width="460px" />
 					</div>
 					<div className="offer-points shadow-pic">
 						<div>
@@ -169,7 +189,7 @@ const Offer = () => {
 			<div className="free-month">
 				<div className="container" data-aos="fade-up">
 					<div className="title">
-						<h1>Mes de Prueba Gratis</h1>
+						<h1>Durante todo un Mes de Prueba Sin Costo podrás</h1>
 					</div>
 					<div className="cards">
 						{
@@ -189,19 +209,22 @@ const Offer = () => {
 				</div>
 			</div>
 			<div className="offer-24hrs">
+				<div className="backG second"></div>
 				<div className="container">
-					<p>
-						Solo de ti depende la estabilidad y el futuro de tu negocio
-					</p>
-					<p>
-						Debes saber que esta invaluable oportunidad que te ofrecemos no podemos mantenerla por mucho tiempo...
-					</p>
-					<p>
-						Solo podemos hacerlo por 24 HORAS...
-					</p>
+					<div className="last-message">
+						<p>
+							Solo de ti depende la estabilidad y el futuro de tu negocio.
+						</p>
+						<p>
+							Debes saber que esta invaluable oportunidad que te ofrecemos no podemos mantenerla por mucho tiempo...
+						</p>
+						<p>
+							Solo podemos hacerlo por 24 HORAS...
+						</p>
+					</div>
 					<div className="offer-message" data-aos="flip-left">
-						¿Estoy listo para llevar <span className="emfasys"> mi negocio al próximo nivel </span> y
-						garantizar <span className="emfasys">el estilo de vida que merezco?</span>
+						¿Estoy listo para llevar <span className="emfasys3"> mi negocio al próximo nivel </span> y
+						garantizar <span className="emfasys3">el estilo de vida que merezco?</span>
 					</div>
 					<div className="btn-free">
 						<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">
@@ -211,29 +234,7 @@ const Offer = () => {
 				</div>
 			</div>
 			<div className="clients">
-				<div>
-					<img src={logo} alt="AndoPQ Software Solutions" width="120px" />
-				</div>
-				<div className="social-links">
-					<a href="https://www.facebook.com/Ando-Solutions-101795728404855" target="_blank">
-						<i className="fa fa-facebook-square fa-2x" aria-hidden="true" />
-					</a>
-					<a href="#" target="_blank">
-						<i className="fa fa-twitter-square fa-2x" aria-hidden="true" />
-					</a>
-					<a href="#" target="_blank">
-						<i className="fa fa-instagram fa-2x" aria-hidden="true" />
-					</a>
-					<a href="https://www.linkedin.com/in/ando-solutions/" target="_blank">
-						<i className="fa fa-linkedin-square fa-2x" aria-hidden="true" />
-					</a>
-					<a href="#" target="_blank">
-						<i className="fa fa-youtube-play fa-2x" aria-hidden="true" />
-					</a>
-				</div>
-				<div className="copy">
-					&copy; Copyright ©2020 Todos Los Derechos Reservados. Ando Solutions
-				</div>
+				<FooterLinks />
 			</div>
 			<ToTopBtn />
 		</div>

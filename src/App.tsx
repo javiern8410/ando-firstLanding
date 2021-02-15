@@ -4,9 +4,9 @@ import { createBrowserHistory, History, LocationState } from 'history';
 import Capture from './pages/Capture';
 import Offer from './pages/Offer';
 import Qualification from './pages/Qualification';
-import DirectQualification from "./pages/DirectQualification";
 import Congratulations from './pages/Congratulations';
 import Thanks from "./pages/Thanks";
+// import DirectQualification from "./pages/DirectQualification";
 
 import AOS from "aos";
 import "aos/dist/aos.css";

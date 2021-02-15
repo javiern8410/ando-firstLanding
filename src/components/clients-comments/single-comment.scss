@@ -1,10 +1,11 @@
 .single-comment {
     width: 100%;
     margin: 10px;
-    font-size: medium;
+    font-size: 1.2em;
     display: flex;
     flex-direction: row;
     padding: 10px;
+    color: rgb(53, 53, 53);
 
     .container {
         padding: 20px;
@@ -16,7 +17,7 @@
         }
 
         .user-data {
-            padding: 0px
+            padding: 0px;
         }
     }
 

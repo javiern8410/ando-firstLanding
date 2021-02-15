@@ -2,13 +2,13 @@
 
 .form-container {
     color: #000000;
-    background-color: #f0f8ffb8;
+    background-color: #f0f8ffeb;
     font-size: 14px;
     border-radius: 5px;
     box-shadow: -2px -2px 26px 1px rgba(0, 0, 0, 0.63);
     max-width: 580px;
     min-width: 320px;
-    min-height: 568px;
+    min-height: 660px;
     overflow: hidden;
     position: relative;
     padding: 20px;
@@ -88,7 +88,7 @@
     }
 
     .btn-purple {
-        background-color: $color-purple-2;
+        background-color: #e77529;
         color: $color-white;
     }
 }

@@ -1,17 +1,59 @@
 import React from 'react';
-import useScript from '../hooks/useScript';
-
+// import useScript from '../hooks/useScript';
+import FooterLinks from '../components/footer/FooterLinks';
 import Logo from "../components/header/logo/Logo";
 import QualificationForm from "../components/forms/QualificationForm";
 import Clients from "../components/clients-comments/Clients";
 import ToTopBtn from "../components/totopbtn/ToTopBtn";
 import './qualification.scss';
 
-import logo from '../images/logo.png';
 import mainPic from '../images/laptop1.png';
 
+import TagManager from 'react-gtm-module';
+
+const tagManagerArgs = {
+	gtmId: 'GTM-PV4LQ97'
+}
+
+const bulletPointsList = [
+	{
+		icon: "area-chart",
+		title: "Garantizar",
+		text: "Mayor retención de Clientes y Más Ventas a través de confirmaciones automáticas y Gestión Automatizada de la Disponibilidad."
+	},
+	{
+		icon: "line-chart",
+		title: "Crecer",
+		text: "Usando todas las Funcionalidades de nuestra Plataforma entre las que están: Reservas, Facturación y Cobro, Informes Operacionales… y Más."
+	},
+	{
+		icon: "globe",
+		title: "Globalizar",
+		text: "Tus ventas mediante funcionamiento las 24 horas tomando ventaja de una Plataforma GDS totalmente integrada y automatizada."
+	},
+	{
+		icon: "cogs",
+		title: "Mantener",
+		text: "Toda la operación de Tu Agencia sin interrupciones gracias a nuestro Soporte 24/7."
+	},
+	{
+		icon: "rocket",
+		title: "Competir",
+		text: "Al estilo de los Grandes con un Sistema Seguro, Intuitivo y Profesional, adaptado para todo tipo de dispositivos."
+	}
+]
+
+TagManager.initialize(tagManagerArgs);
 
 const Qualification = () => {
+	(window as any).dataLayer.push({
+		event: 'pageview',
+		page: {
+		  url: window.location.href,
+		  title: "Landing de Calificación"
+		}
+	});
+
 	// useScript('https://clientes.andopqsolutions.com/crmScript.js');
 
 	const mscript = `(function({d=document,s='script',id='bacrmtrk', cKey, oKey}){
@@ -30,118 +72,59 @@ const Qualification = () => {
 	s.type = 'text/javascript';
 	s.async = false;
 	s.innerHTML = mscript;
-	document.body.appendChild(s);
-
+	document.body.prepend(s);
+	
 	return (
-		<div className="quialification-container" id="top">
+		<div className="qualification-container" id="top">
+			<div className="backG">
+				
+			</div>
 			<div className="header">
 				<div className="container">
 					<Logo />
 					<div className="slogan">
-						Estás a un paso de obtener...
+						Podrías Calificar para Probar Sin Costo
 					</div>
 					<div className="header-msg">
-						Tu propio <span className="emfasys"> Sistema de Reservas Sin Costo por 30 Días</span>
+						Software #1 GDS Personalizado para <span className="emfasys">Agencias de Viajes.</span>
 					</div>
-					<div className="slogan">
-						Con toda honestidad te decimos que este puede ser el paso de avance más importante de tu negocio este año.
+					<div>
+						<p className="subtitle">
+						Llena este Formulario Ahora y podrás descubrir si Calificas para esta Exclusiva Oportunidad.
+						</p>
 					</div>
 				</div>
 			</div>
 			<div className="main">
 				<div className="container">
-					<div>
-						<div className="main-pic">
+					<div className="bullet-points-list">
+						<div>
 							<img src={mainPic} alt="AndoPQ Software Solutions" width="100%" />
 						</div>
-						<div className="bullet-points-list">
-							<ul>
-								<li>
-									<div className="bp-icon">
-										<i className="fa fa-rocket fa-2x" aria-hidden="true" />
-									</div>
-									<div className="text">
-										<h5 className="bp-emfasys">Inmediatez</h5>
-										<p>
-											Vínculo Directa con Varios Proveedores que permite a los Viajeros reservar en tu plataforma y tener confirmación inmediata.
-										</p>
-									</div>
-									<div>
-										<span className="bullet-points-number">
-											1
-										</span>
-									</div>
-								</li>
-								<li className="bp-icon">
-									<div className="bp-icon">
-										<i className="fa fa-handshake-o fa-2x" aria-hidden="true" />
-									</div>
-									<div className="text">
-										<h5 className="bp-emfasys">Simplicidad</h5>
-										<p>
-											Capacidad de Integrarse con Cualquier Proveedor de forma Sencilla, sin la Necesidad de un Programador
-										</p>
-									</div>
-									<div>
-										<span className="bullet-points-number">
-											2
-										</span>
-									</div>
-								</li>
-								<li className="bp-icon">
-									<div className="bp-icon">
-										<i className="fa fa-users fa-2x" aria-hidden="true" />
-									</div>
-									<div className="text">
-										<h5 className="bp-emfasys">Potencialidad</h5>
-										<p>
-											Escalabilidad Infinita. Soportamos Todo el Crecimiento que Tu Agencia Tendrá.
-										</p>
-									</div>
-									<div>
-										<span className="bullet-points-number">
-											3
-										</span>
-									</div>
-								</li>
-								<li className="bp-icon">
-									<div className="bp-icon">
-										<i className="fa fa-cogs fa-2x" aria-hidden="true" />
-									</div>
-									<div className="text">
-										<h5 className="bp-emfasys">Mantenimiento</h5>
-										<p>
-											Actualizaciones y Soporte Técnico 24/7
-										</p>
-									</div>
-									<div>
-										<span className="bullet-points-number">
-											4
-										</span>
-									</div>
-								</li>
-								<li className="bp-icon">
-									<div className="bp-icon">
-										<i className="fa fa-shield fa-2x" aria-hidden="true" />
-									</div>
-									<div className="text">
-										<h5 className="bp-emfasys">Seguridad</h5>
-										<p>
-											Sistema de Protección de la Información 100% Garantizado
-										</p>
-									</div>
-									<div>
-										<span className="bullet-points-number">
-											5
-										</span>
-									</div>
-								</li>
-							</ul>
-						</div>
+						<ul>
+							{
+								bulletPointsList.map( (item, index) => (
+									<li key={index}>
+										<div className="bp-icon">
+											<i className={`fa fa-${item.icon} fa-3x`} aria-hidden="true" />
+										</div>
+										<div className="text">
+											<h5 className="bp-emfasys">{item.title}</h5>
+											<p>
+												{item.text}
+											</p>
+										</div>
+										<div>
+											<span className="bullet-points-number">
+												{index + 1}
+											</span>
+										</div>
+									</li>
+								))
+							}
+						</ul>
 					</div>
-					<div>
-						<QualificationForm />
-					</div>
+					<QualificationForm />
 				</div>
 			</div>
 			<div className="clients">
@@ -151,29 +134,7 @@ const Qualification = () => {
 				</div>
 			</div>
 			<div className="footer">
-				<div>
-					<img src={logo} alt="AndoPQ Software Solutions" width="120px" />
-				</div>
-				<div className="social-links">
-					<a href="https://www.facebook.com/Ando-Solutions-101795728404855" target="_blank">
-						<i className="fa fa-facebook-square fa-2x" aria-hidden="true" />
-					</a>
-					<a href="#" target="_blank">
-						<i className="fa fa-twitter-square fa-2x" aria-hidden="true" />
-					</a>
-					<a href="#" target="_blank">
-						<i className="fa fa-instagram fa-2x" aria-hidden="true" />
-					</a>
-					<a href="https://www.linkedin.com/in/ando-solutions/" target="_blank">
-						<i className="fa fa-linkedin-square fa-2x" aria-hidden="true" />
-					</a>
-					<a href="#" target="_blank">
-						<i className="fa fa-youtube-play fa-2x" aria-hidden="true" />
-					</a>
-				</div>
-				<div>
-					&copy; Copyright 2020 Ando Solutions
-				</div>
+				<FooterLinks />
 			</div>
 			<ToTopBtn />
 		</div>

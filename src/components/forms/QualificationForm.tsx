@@ -33,11 +33,11 @@ const QualificationForm: FunctionComponent<any> = () => {
 			{/* <form ref={qualificationForm} id="qualification" onSubmit={handleSubmit} action="https://member.mailingboss.com/index.php/lists/er595zp3j0e78/subscribe" method="post" accept-charset="utf-8" target="_self"> */}
 			<form ref={qualificationForm} id="qualification" onSubmit={handleSubmit} action="https://member.mailingboss.com/index.php/lists/er595zp3j0e78/subscribe" method="post" accept-charset="utf-8" target="_self" ba-crm-id="567b60661693f2f55941d30ebe37ac183626474a">
 				<div className="form-title">
-					<h6 className="emfasis">
-						¡DESCUBRE LA POTENCIA QUE LE DAMOS A TU NEGOCIO!
+					<h6 className="emfasis-form">
+						Formulario de Calificación.
 					</h6>
 					<p>
-						Completa este Formulario y Descubre si Calificas para Probar Tu Sistema Personalizado de Reservas por 30 días Sin Costo Alguno.
+						Rellena este Sencillo Formulario y verifica si podrías calificar para Probar Sin Costo el Software #1 GDS Personalizado para Agencias de Viajes.
 					</p>
 				</div>
 				<div className="form-body">

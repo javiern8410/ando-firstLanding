@@ -43,9 +43,13 @@
 
     .form-title {
         h6 {
-            color: #48a9e6;
             text-align: center;
             font-weight: bold;
+        }
+
+        .emfasis-form {
+            color: #335469;
+            font-size: 1.8rem;
         }
 
         p {

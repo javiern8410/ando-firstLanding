@@ -5,8 +5,8 @@ import Logo from "../components/header/logo/Logo";
 import ToTopBtn from "../components/totopbtn/ToTopBtn";
 import './thanks.scss';
 
-import logo from '../images/logo.png';
 import my_business from '../images/vacations.jpg';
+import FooterLinks from '../components/footer/FooterLinks';
 
 const Thanks: FunctionComponent<any> = ({step}) => {
 
@@ -94,29 +94,7 @@ const Thanks: FunctionComponent<any> = ({step}) => {
 				</div>
 			</div>
 			<div className="clients">
-				<div>
-					<img src={logo} alt="AndoPQ Software Solutions" width="120px" />
-				</div>
-				<div className="social-links">
-					<a href="https://www.facebook.com/Ando-Solutions-101795728404855" target="_blank" rel="noopener noreferrer">
-						<i className="fa fa-facebook-square fa-2x" aria-hidden="true" />
-					</a>
-					<a href="#" target="_blank" rel="noopener noreferrer">
-						<i className="fa fa-twitter-square fa-2x" aria-hidden="true" />
-					</a>
-					<a href="#" target="_blank" rel="noopener noreferrer">
-						<i className="fa fa-instagram fa-2x" aria-hidden="true" />
-					</a>
-					<a href="https://www.linkedin.com/in/ando-solutions/" target="_blank" rel="noopener noreferrer">
-						<i className="fa fa-linkedin-square fa-2x" aria-hidden="true" />
-					</a>
-					<a href="#" target="_blank" rel="noopener noreferrer">
-						<i className="fa fa-youtube-play fa-2x" aria-hidden="true" />
-					</a>
-				</div>
-				<div className="copy">
-					&copy; Copyright ©2020 Todos Los Derechos Reservados. Ando Solutions
-				</div>
+				<FooterLinks />
 			</div>
 			<ToTopBtn />
 		</div>

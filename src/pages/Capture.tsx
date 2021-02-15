@@ -1,19 +1,46 @@
 import React from 'react';
-import useScript from '../hooks/useScript';
-
+// import useScript from '../hooks/useScript';
+import FooterLinks from '../components/footer/FooterLinks';
 import Logo from "../components/header/logo/Logo";
 import Form from "../components/forms/Form";
 import Clients from "../components/clients-comments/Clients";
 import ToTopBtn from "../components/totopbtn/ToTopBtn";
 import './capture.scss';
 
-import logo from '../images/logo.png';
 
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
 	gtmId: 'GTM-PV4LQ97'
-  }
+}
+
+const bulletPointsList = [
+	{
+		icon: "usd",
+		title: "Más Reservas",
+		text: "Todos tus Productos Turísticos en un solo lugar. Confirmación automática. Integraciones API Sin Costo… y Más."
+	},
+	{
+		icon: "tablet",
+		title: "Mejor Gestión",
+		text: "Sistema Modular de Administración Intuitivo. CRM y Reportes Operativos y Financieros. Confrmación automatizada en tiempo real. Menos tiempo, Menos Gastos."
+	},
+	{
+		icon: "check-square-o",
+		title: "Control Absoluto",
+		text: "Plataforma basada en la Web. Soporta todos los dispositivos y navegadores."
+	},
+	{
+		icon: "cogs",
+		title: "Alta Confiabilidad",
+		text: "Te asistimos 24/7. Garantizamos disponibilidad del Sistema sin interrupciones."
+	},
+	{
+		icon: "thumbs-up",
+		title: "Cliente 100% Satisfecho",
+		text: "Tu página de ventas totalmente personalizada con tu marca. Fácil de usar y de carga rápida. ¡Te ayudamos a gestionar tu Agencia de Viaje al estilo de los Grandes!"
+	}
+]
 
 TagManager.initialize(tagManagerArgs);
 
@@ -22,7 +49,7 @@ const Capture = () => {
 		event: 'pageview',
 		page: {
 		  url: window.location.href,
-		  title: "Landing inicial de conversión"
+		  title: "Landing de Captura"
 		}
 	});
 
@@ -48,19 +75,21 @@ const Capture = () => {
 	
 	return (
 		<div className="capture-container" id="top">
+			<div className="backG">
+				
+			</div>
 			<div className="header">
 				<div className="container">
 					<Logo />
 					<div className="slogan">
-							¿Sabes cual es el secreto de las personas exitosas?
+						Potencia Tus Ventas
 					</div>
 					<div className="header-msg">
-						Es Muy Sencillo: <span className="emfasys"> Son Profesionales </span>
+						Software #1 GDS Personalizado para <span className="emfasys">Agencias de Viajes.</span>
 					</div>
 					<div>
 						<p className="subtitle">
-							¡Gana más Clientes y consigue Más Ventas a través de una Plataforma de Clase Mundial 
-							que podemos construir Exclusivamente para tu Agencia de Viajes sin que te cueste un Solo Céntimo!
+							El Futuro de Agencias de Viajes Pequeñas y Medianas depende de la Disponibilidad, Accesibilidad y Confirmación en Tiempo Real de las Reservas.
 						</p>
 					</div>
 				</div>
@@ -68,90 +97,30 @@ const Capture = () => {
 			<div className="main">
 				<div className="container">
 					<div className="bullet-points-list">
-						<div>
+						<div style={{fontSize: '1.4em'}}>
 							Ponemos a Tu Disposición <span className="emfasys"> una Plataforma de Clase Mundial </span> con Excelentes Resultados en Varios Mercados
 						</div>
 						<ul>
-							<li>
-								<div className="bp-icon">
-									<i className="fa fa-rocket fa-2x" aria-hidden="true" />
-								</div>
-								<div className="text">
-									<h5 className="bp-emfasys">Inmediatez</h5>
-									<p>
-										Vínculo Directa con Varios Proveedores que permite a los Viajeros reservar en tu plataforma y tener confirmación inmediata.
-									</p>
-								</div>
-								<div>
-									<span className="bullet-points-number">
-										1
-									</span>
-								</div>
-							</li>
-							<li>
-								<div className="bp-icon">
-									<i className="fa fa-handshake-o fa-2x" aria-hidden="true" />
-								</div>
-								<div className="text">
-									<h5 className="bp-emfasys">Simplicidad</h5>
-									<p>
-										Capacidad de Integrarse con Cualquier Proveedor de forma Sencilla, sin la Necesidad de un Programador
-									</p>
-								</div>
-								<div>
-									<span className="bullet-points-number">
-										2
-									</span>
-								</div>
-							</li>
-							<li>
-								<div className="bp-icon">
-									<i className="fa fa-users fa-2x" aria-hidden="true" />
-								</div>
-								<div className="text">
-									<h5 className="bp-emfasys">Potencialidad</h5>
-									<p>
-										Escalabilidad Infinita. Soportamos Todo el Crecimiento que Tu Agencia Tendrá.
-									</p>
-								</div>
-								<div>
-									<span className="bullet-points-number">
-										3
-									</span>
-								</div>
-							</li>
-							<li>
-								<div className="bp-icon">
-									<i className="fa fa-cogs fa-2x" aria-hidden="true" />
-								</div>
-								<div className="text">
-									<h5 className="bp-emfasys">Mantenimiento</h5>
-									<p>
-										Actualizaciones y Soporte Técnico 24/7 
-									</p>
-								</div>
-								<div>
-									<span className="bullet-points-number">
-										4
-									</span>
-								</div>
-							</li>
-							<li>
-								<div className="bp-icon">
-									<i className="fa fa-shield fa-2x" aria-hidden="true" />
-								</div>
-								<div className="text">
-									<h5 className="bp-emfasys">Seguridad</h5>
-									<p>
-										Sistema de Protección de la Información 100% Garantizado
-									</p>
-								</div>
-								<div>
-									<span className="bullet-points-number">
-										5
-									</span>
-								</div>
-							</li>
+							{
+								bulletPointsList.map( (item, index) => (
+									<li key={index}>
+										<div className="bp-icon">
+											<i className={`fa fa-${item.icon} fa-3x`} aria-hidden="true" />
+										</div>
+										<div className="text">
+											<h5 className="bp-emfasys">{item.title}</h5>
+											<p>
+												{item.text}
+											</p>
+										</div>
+										<div>
+											<span className="bullet-points-number">
+												{index + 1}
+											</span>
+										</div>
+									</li>
+								))
+							}
 						</ul>
 					</div>
 					<Form />
@@ -164,29 +133,7 @@ const Capture = () => {
 				</div>
 			</div>
 			<div className="footer">
-				<div>
-            		<img src={logo} alt="AndoPQ Software Solutions" width="120px" />
-				</div>
-				<div className="social-links">
-					<a href="https://www.facebook.com/Ando-Solutions-101795728404855" target="_blank">
-						<i className="fa fa-facebook-square fa-2x" aria-hidden="true" />
-					</a>
-					<a href="#" target="_blank">
-						<i className="fa fa-twitter-square fa-2x" aria-hidden="true" />
-					</a>
-					<a href="#" target="_blank">
-						<i className="fa fa-instagram fa-2x" aria-hidden="true" />
-					</a>
-					<a href="https://www.linkedin.com/in/ando-solutions/" target="_blank">
-						<i className="fa fa-linkedin-square fa-2x" aria-hidden="true" />
-					</a>
-					<a href="#" target="_blank">
-						<i className="fa fa-youtube-play fa-2x" aria-hidden="true" />
-					</a>
-				</div>
-				<div className="copyright">
-					Copyright &copy; 2020 Ando Solutions. Todos Los Derechos Reservados.
-				</div>
+				<FooterLinks />
 			</div>
 			<ToTopBtn />
 		</div>

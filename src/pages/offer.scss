@@ -4,24 +4,70 @@
 .offer-container {
     display: flex;
     flex-direction: column;
-    background-image: url("../images/office_back_2.jpg");
+    // background-image: url("../images/office_back_2.jpg");
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     overflow: visible;
     min-height: 100vh;
-    color: $color-white;
+    color: $color-black;
+    background-color: $color-white;
+
+    /* .backG {
+        transform: skewY(-6deg);
+        transform-origin: 0 0;
+        position: absolute;
+        height: 678px;
+        background-color: #f8f9fa;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    } */
+
+
+    .backG {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        // background: linear-gradient(150deg, #6527de 20%, #228ede 80%) !important;
+        // background: linear-gradient(160deg, #515786, #a8c8e2) !important;
+        background: linear-gradient(174deg, #334167, #a8c8e2) !important;
+        transform: skewY(-6deg);
+        transform-origin: 0 50%;
+        height: 90vh;
+
+        &.gray {
+            background: aliceblue !important;
+        }
+
+        &.second {
+            height: 80vh;
+            background: linear-gradient(174deg, #d3e9fa, #f0f8ffeb) !important;
+        }
+    }
+
+    .offer-header {
+        display: flex;
+        flex-direction: column;
+        background-attachment: fixed;
+        // background-image: url(../images/h1_bg.cef0d0e6.png);
+        background-size: cover;
+        background-position: center center;
+    }
 
     .main {
         flex-grow: 1;
-        background-color: $color-white;
+        // background-color: rgba(17, 42, 88, 0.2);
+        // background: linear-gradient(to bottom, #a85af1 0%,#385da0 100%);
         display: flex;
-        padding: 10px 0 60px 0;
-
-        &.testimonials {
-            background-color: rgba(52, 52, 90, 0.7);
-            padding: 50px 0;
-        }
+        padding: 0 0 20px 0;
+        position: relative;
+        margin-bottom: 100px;
 
         .container {
             max-width: 1280px;
@@ -29,6 +75,278 @@
             grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
             grid-gap: 10px;
             justify-items: center;
+            align-items: center;
+            position: relative;
+            min-height: 65vh;
+
+            .offer-picture {
+                border-radius: 12px;
+            }
+
+            .shadow-pic {
+                box-shadow: 0px 1px 5px 3px #9e9c9c94;
+            }
+
+            .offer-points {
+                background-color: white;
+                color: #626264;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                border-radius: 10px;
+                font-size: 18px;
+
+                .bullet-points-list {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: circle;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        margin: 10px 0;
+                        padding: 0 5px;
+                        font-size: 16px;
+                        color: #2d2c2c;
+                    }
+                }
+            }
+
+            .offer-video {
+                text-align: center;
+
+                .video {
+                    width: 100%;
+                    max-width: 632px;
+                    height: 365px;
+                    background-image: url("../images/video-screen.png");
+                    background-position: center center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    justify-items: center;
+                }
+
+                img {
+                    width: 100%;
+                    max-width: 560px;
+                    height: 315px;
+                }
+            }
+
+            .offer-msg {
+                direction: ltr;
+                .slogan {
+                    display: flex;
+                    text-align: center;
+                    justify-content: center;
+                    margin: 10px 0 20px 0;
+                    width: 100%;
+                    color: $color-black;
+                    font-size: 24px;
+                    display: flex;
+                }
+    
+                .subtitle {
+                    color: #d9dcec;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    text-align: center;
+                    padding: 20px 0 0 0;
+                }
+    
+                .header-msg {
+                    color: $color-black;
+                    font-size: 46px;
+                    text-align: center;
+                }
+
+                .header-msg2 {
+                    text-align: center;
+                    font-size: 2.3rem;
+                }
+
+                .arrow {
+                    display: none;
+                    text-align: center;
+                }
+            }
+
+            .img-fluid {
+                border-radius: 10px;
+            }
+
+            .subtitle {
+                color: $color-black;
+                font-size: 16px;
+                text-align: center;
+                padding: 5px 5px 0 5px;
+            }
+        }
+    }
+
+    .header {
+        // background-color: rgba(17, 42, 88, 0.2);
+        color: $color-black;
+        position: relative;
+
+        .header-top {
+            display: flex;
+            justify-content: center;
+            box-shadow: 1px 0px 6px 3px #00000026;
+
+            .logo {
+                max-width: 1280px;
+                width: 100%;
+            }
+        }
+
+        .container {
+            max-width: 1280px;
+            position: relative;
+            padding: 10px;
+
+            .slogan {
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                margin: 10px 0 20px 0;
+                width: 100%;
+                color: $color-black;
+                font-size: 24px;
+                display: flex;
+            }
+
+            .subtitle {
+                color: #d9dcec;
+                font-size: 1.6rem;
+                font-weight: 500;
+                text-align: center;
+                padding: 20px 0 0 0;
+            }
+
+            .header-msg {
+                color: $color-black;
+                font-size: 46px;
+                text-align: center;
+            }
+        }
+    }
+
+    .clients {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        min-height: 350px;
+        padding: 40px 0;
+        color: $color-black;
+        text-align: center;
+        position: relative;
+
+        .container {
+            position: relative;
+
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 28px;
+                font-weight: bold;
+                padding: 10px 0;
+
+                &.white {
+                    color: $color-white;
+                }
+            }
+
+        }
+
+        .carousel-dots li button:before {
+            opacity: .35;
+            color: #d45806 !important;
+
+            .carousel-dots-active {
+                color: #52b1ea !important;
+            }
+        }
+
+        .copy {
+            color: #52b1ea;
+        }
+    }
+
+    .offer-24hrs {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        min-height: 550px;
+        position: relative;
+
+        // background-color: rgba(52, 52, 90, 0.7);
+        // background-color: #c8effcf6;
+        // background-color: #345d86ef;
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            max-width: 1280px;
+            position: relative;
+            text-align: center;
+
+            .offer-message {
+                width: 80%;
+                height: 150px;
+                background-color: #e1e1e8e7;
+                -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 51% 93%, 50% 100%, 49% 93%, 0 93%);
+                clip-path: polygon(0% 0%, 100% 0%, 100% 87%, 51% 87%, 50% 100%, 49% 87%, 0 87%);
+                margin: 30px 0;
+                color: black;
+                padding: 10px;
+
+                font-size: 36px;
+                text-align: center;
+            }
+
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 28px;
+                font-weight: bold;
+                padding: 10px 0;
+            }
+
+            .last-message {
+                font-size: 1.5em;
+                text-align: center;
+            }
+
+        }
+    }
+
+    .testimonials {
+        flex-grow: 1;
+        // background-color: rgba(17, 42, 88, 0.2);
+        // background: linear-gradient(to bottom, #a85af1 0%,#385da0 100%);
+        display: flex;
+        padding: 0 0 20px 0;
+        position: relative;
+        margin-bottom: 50px;
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+            grid-gap: 10px;
+            position: relative;
 
             .offer-picture {
                 border-radius: 12px;
@@ -80,161 +398,17 @@
                 }
             }
 
+            .img-fluid {
+                border-radius: 10px;
+            }
+
             .subtitle {
-                color: #626264;
+                color: $color-black;
                 font-size: 16px;
                 text-align: center;
                 padding: 5px 5px 0 5px;
             }
         }
-    }
-
-    .header {
-        background-color: $color-white;
-        color: $color-black;
-
-        .header-top {
-            display: flex;
-            justify-content: center;
-            box-shadow: 1px 0px 6px 3px #bdbdbdc7;
-
-            .logo {
-                max-width: 1280px;
-                width: 100%;
-            }
-        }
-
-        .container {
-            max-width: 1280px;
-            padding: 10px;
-
-            .slogan {
-                display: flex;
-                text-align: center;
-                justify-content: center;
-                margin: 10px 0 20px 0;
-                width: 100%;
-                color: $color-black;
-                font-size: 24px;
-                display: flex;
-            }
-
-            .subtitle {
-                color: #152b9c;
-                font-size: 24px;
-                text-align: center;
-                padding: 20px 0;
-            }
-
-            .header-msg {
-                color: $color-black;
-                font-size: 46px;
-                text-align: center;
-            }
-        }
-    }
-
-    .clients {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        min-height: 350px;
-        padding: 10px;
-        background-color: white;
-        color: $color-black;
-        text-align: center;
-
-        &.vip {
-            background-color: #345d86ef
-        }
-
-        .container {
-            max-width: 1280px;
-
-            .title {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 28px;
-                font-weight: bold;
-                padding: 10px 0;
-
-                &.white {
-                    color: $color-white;
-                }
-            }
-
-        }
-
-        .carousel-dots li button:before {
-            opacity: .35;
-            color: #d45806 !important;
-
-            .carousel-dots-active {
-                color: #52b1ea !important;
-            }
-        }
-
-        .social-links {
-            padding: 10px;
-            color: #52b1ea;
-
-            i {
-                margin: 10px;
-            }
-        }
-
-        .copy {
-            color: #52b1ea;
-        }
-
-    }
-
-    .offer-24hrs {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-        min-height: 550px;
-
-        // background-color: rgba(52, 52, 90, 0.7);
-        // background-color: #c8effcf6;
-        background-color: #345d86ef;
-
-        .container {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px;
-            max-width: 1280px;
-
-            .offer-message {
-                width: 80%;
-                height: 150px;
-                background-color: #e1e1e8e7;
-                -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 51% 93%, 50% 100%, 49% 93%, 0 93%);
-                clip-path: polygon(0% 0%, 100% 0%, 100% 87%, 51% 87%, 50% 100%, 49% 87%, 0 87%);
-                margin: 30px 0;
-                color: black;
-                padding: 10px;
-
-                font-size: 36px;
-                text-align: center;
-            }
-
-            .title {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 28px;
-                font-weight: bold;
-                padding: 10px 0;
-            }
-        }
-
     }
 
     .gds-offer {
@@ -245,11 +419,11 @@
         padding: 10px;
         min-height: 350px;
         color: $color-black;
-
-        background-color: rgba(255, 255, 255, 0.95);
+        position: relative;
 
         .container {
             max-width: 1280px;
+            position: relative;
 
             .title {
                 display: flex;
@@ -277,8 +451,7 @@
         align-items: center;
         min-height: 150px;
         padding: 30px;
-        // background-color: #c8effc;
-        background-color: #fffffff3;
+        margin-bottom: 130px;
 
         .container {
             max-width: 1280px;
@@ -347,18 +520,20 @@
         color: $color-white;
         min-height: 100px;
         padding: 20px;
-
-        .social-links {
-            padding: 10px;
-
-            i {
-                margin: 10px;
-            }
-        }
     }
 
     .emfasys {
-        color: #52b1ea;
+        color: $color-white;
+        font-weight: 500;
+    }
+
+    .emfasys2 {
+        color: #d6e3eb;
+        font-weight: 500;
+    }
+
+    .emfasys3 {
+        color: #2c36dc;
         font-weight: 500;
     }
 
@@ -371,12 +546,13 @@
         text-align: center;
         border-radius: 25px;
         border: 0;
-        padding: 10px 35px;
+        padding: 10px 10px;
         background-color: #e77529;
         color: $color-white;
         outline: 0;
         text-decoration: none;
-        max-width: 400px;
+        max-width: 500px;
+        font-size: 1.4em;
 
         &:hover {
             background-color: #e2610a;
@@ -386,14 +562,68 @@
 }
 
 @media (max-width: 500px) {
-    .offer-container .offer-24hrs .container .offer-message {
-        width: 90%;
-        min-height: 165px;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 87%, 54% 87%, 50% 100%, 46% 87%, 0 87%);
-        font-size: 20px;
+    .offer-container .offer-24hrs .container{
+        font-size: 1.3em;
+        .offer-message {
+            width: 90%;
+            min-height: 165px;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 87%, 54% 87%, 50% 100%, 46% 87%, 0 87%);
+            font-size: 20px;
+        }
     }
 
     .btn-free-month {
         width: 320px;
     }
+
+    .offer-container {
+        .main .container .offer-msg {
+            .header-msg {
+                font-size: 2em;
+                margin-top: 20px;
+            }
+
+            .header-msg2 {
+                margin-top: 20px;
+                font-size: 1.7rem;
+            }
+
+            .arrow {
+                display: block;
+            }
+        }
+
+        .offer-24hrs .container .last-message {
+            font-size: 1.2em;
+        }
+        .backG {
+            transform: skewY(0deg);
+            height: 100vh;
+            position: fixed;
+        }
+
+        .clients > .backG.gray {
+            display: none;
+        }
+
+        .offer-24hrs > .backG.second {
+            display: none;
+        }
+        .free-month {
+            margin-bottom: 20px;
+            padding: 0;
+        }
+        .offer-header > .main {
+            margin-bottom: 20px;   
+        }
+    }
+
+    .free-month .container .title {
+        color: white !important;
+    }
+
+    .gds-offer .emfasys3 {
+        color: white;
+    }
+
 }
