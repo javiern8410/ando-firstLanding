@@ -9,10 +9,13 @@ import './capture.scss';
 
 
 import TagManager from 'react-gtm-module'
+import CookiesMsg from '../components/cookiesmsg/CookieConsent';
 
 const tagManagerArgs = {
 	gtmId: 'GTM-PV4LQ97'
 }
+
+TagManager.initialize(tagManagerArgs);
 
 const bulletPointsList = [
 	{
@@ -41,8 +44,6 @@ const bulletPointsList = [
 		text: "Tu página de ventas totalmente personalizada con tu marca. Fácil de usar y de carga rápida. ¡Te ayudamos a gestionar tu Agencia de Viaje al estilo de los Grandes!"
 	}
 ]
-
-TagManager.initialize(tagManagerArgs);
 
 const Capture = () => {
 	(window as any).dataLayer.push({
@@ -75,9 +76,8 @@ const Capture = () => {
 	
 	return (
 		<div className="capture-container" id="top">
-			<div className="backG">
-				
-			</div>
+			<CookiesMsg />
+			<div className="backG"></div>
 			<div className="header">
 				<div className="container">
 					<Logo />

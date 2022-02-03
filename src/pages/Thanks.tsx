@@ -7,6 +7,7 @@ import './thanks.scss';
 
 import my_business from '../images/vacations.jpg';
 import FooterLinks from '../components/footer/FooterLinks';
+import CookiesMsg from '../components/cookiesmsg/CookieConsent';
 
 const Thanks: FunctionComponent<any> = ({step}) => {
 
@@ -34,6 +35,7 @@ const Thanks: FunctionComponent<any> = ({step}) => {
 	
 	return (
 		<div className="thanks-container" id="top">
+			<CookiesMsg />
 			<div className="header">
 				<div className="header-top">
 					<Logo />

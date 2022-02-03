@@ -1,5 +1,6 @@
 import React, { useState, FunctionComponent, useRef } from "react";
 import "./quialification-form.scss";
+import TagManager from 'react-gtm-module';
 
 const initialState = {
 	FNAME: '',
@@ -8,6 +9,13 @@ const initialState = {
 	NUMBER: '',
 	LONGTEXT: ''
 }
+
+
+const tagManagerArgs = {
+	gtmId: 'GTM-PV4LQ97'
+}
+
+TagManager.initialize(tagManagerArgs);
 
 const QualificationForm: FunctionComponent<any> = () => {
 	const [clientData, setClientData] = useState(initialState)
@@ -19,6 +27,7 @@ const QualificationForm: FunctionComponent<any> = () => {
 	const handleSubmit = (event: any) => {
 		setLoading(true);
 		event.preventDefault();
+		(window as any).dataLayer.push({'formSubmit': {element: 'qualificationForm'}});
 		qualificationForm.current.submit();	
 	}
 

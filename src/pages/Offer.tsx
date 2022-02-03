@@ -17,6 +17,15 @@ import teamTwo from '../images/ando-team2.jpeg';
 // import singleOpinion from '../images/single-opinion.png';
 // import videoMonitor from '../images/video-monitor.png';
 
+import TagManager from 'react-gtm-module'
+import CookiesMsg from '../components/cookiesmsg/CookieConsent';
+
+const tagManagerArgs = {
+	gtmId: 'GTM-PV4LQ97'
+}
+
+TagManager.initialize(tagManagerArgs);
+
 const cardData = [
 	{
 		icon : "fa-area-chart",
@@ -72,6 +81,14 @@ const Offer = () => {
 		setShowModal(false);
 	}
 
+	(window as any).dataLayer.push({
+		event: 'pageview',
+		page: {
+		  url: window.location.href,
+		  title: "Visita página de oferta"
+		}
+	});
+
 	const mscript = `(function({d=document,s='script',id='bacrmtrk', cKey, oKey}){
 		let n, p = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) {return;}
@@ -92,6 +109,7 @@ const Offer = () => {
 
 	return (
 		<div className="offer-container" id="top">
+			<CookiesMsg />
 			<Modal showModal={showModal} handleClose={handleClose}>
 				<iframe width="100%" height="100%" src="https://videomng.builderall.com/embed/LkcwiPNHIX/?autoplay=1&countdown=1&controls=1&allowpause=1&loop=0" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Oferta Sistema GDS"></iframe>
 			</Modal>
@@ -106,19 +124,21 @@ const Offer = () => {
 					<div className="container">
 						<div className="offer-msg">
 							<div className="header-msg">
-								<span className="emfasys">
-									Software #1 GDS Personalizado para Agencias de Viajes.
-								</span>
+								Software #1 GDS Personalizado para Agencias de Viajes.
 							</div>
 							<div className="header-msg2">
 								<span className="emfasys2">
-									Todo un Mes de Prueba Sin Costo
+									El Mejor Momento es HOY...
 								</span>
 							</div>
 							<div>
 								<p className="subtitle">
-									Visualiza con este Video un Nuevo Futuro para Tu Negocio… Para lo que Amas…
+									Descubre <span className="strong-text"> Si Calificas </span> para probar <span className="strong-text"> tu propia plataforma de reservas </span> durante
+								<span className="strong-text"> un mes totalmente gratis, </span> haciendo Clic en el Botón de abajo AHORA.
 								</p>
+							</div>
+							<div className="btn-free">
+								<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">¡Si, Quiero Descubrir Si Califico para la Prueba de Un Mes GRATIS!</Link>
 							</div>
 							<div className="arrow">
 								<i className="fa fa-arrow-down fa-3x" aria-hidden="true" style={{fontWeight: 'lighter', color: '#e1e3ec'}} />
@@ -127,15 +147,7 @@ const Offer = () => {
 						<div className="offer-video">
 							{/* <iframe className="video" src="https://www.youtube.com/embed/C7whcHmiaN8" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Oferta Sistema GDS"></iframe> */}
 							<div className="video">
-								<i onClick={() => setShowModal(true)} className="fa fa-play-circle-o fa-5x" aria-hidden="true" style={{cursor: 'pointer', color: '#0bbde6', margin: '0 auto'}} />
-							</div>
-							<h5 style={{fontSize: '2rem', color: 'black'}}>El Mejor Momento es HOY...</h5>
-							<p className="subtitle">
-								Descubre <span className="strong-text"> Si Calificas </span> para probar <span className="strong-text"> tu propia plataforma de reservas </span> durante
-							 <span className="strong-text"> un mes totalmente gratis </span> haciendo Clic en el Botón de abajo AHORA.
-							</p>
-							<div className="btn-free">
-								<Link to="/qualification" className="btn-free-month" title="Si, Descubrir si califico para UN MES GRATIS">¡Si, Quiero Descubrir Si Califico para la Prueba de Un Mes GRATIS!</Link>
+								<i onClick={() => setShowModal(true)} className="fa fa-play-circle-o fa-5x" aria-hidden="true" style={{cursor: 'pointer', color: '#0bbde6', margin: '0 auto', fontSize: '8em'}} />
 							</div>
 						</div>
 					</div>

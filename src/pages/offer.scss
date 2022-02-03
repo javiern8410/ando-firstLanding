@@ -39,7 +39,7 @@
         background: linear-gradient(174deg, #334167, #a8c8e2) !important;
         transform: skewY(-6deg);
         transform-origin: 0 50%;
-        height: 90vh;
+        height: 77vh;
 
         &.gray {
             background: aliceblue !important;
@@ -54,10 +54,6 @@
     .offer-header {
         display: flex;
         flex-direction: column;
-        background-attachment: fixed;
-        // background-image: url(../images/h1_bg.cef0d0e6.png);
-        background-size: cover;
-        background-position: center center;
     }
 
     .main {
@@ -67,7 +63,6 @@
         display: flex;
         padding: 0 0 20px 0;
         position: relative;
-        margin-bottom: 100px;
 
         .container {
             max-width: 1280px;
@@ -115,12 +110,13 @@
 
             .offer-video {
                 text-align: center;
+                width: 100%;
 
                 .video {
                     width: 100%;
                     max-width: 632px;
-                    height: 365px;
-                    background-image: url("../images/video-screen.png");
+                    height: 500px;
+                    background-image: url("../images/video-screen-white.png");
                     background-position: center center;
                     background-size: contain;
                     background-repeat: no-repeat;
@@ -151,8 +147,8 @@
                 }
     
                 .subtitle {
-                    color: #d9dcec;
-                    font-size: 1.6rem;
+                    color: $color-black;
+                    font-size: 1.1rem;
                     font-weight: 500;
                     text-align: center;
                     padding: 20px 0 0 0;
@@ -160,8 +156,9 @@
     
                 .header-msg {
                     color: $color-black;
-                    font-size: 46px;
+                    font-size: 40px;
                     text-align: center;
+                    font-weight: 500;
                 }
 
                 .header-msg2 {
@@ -172,6 +169,7 @@
                 .arrow {
                     display: none;
                     text-align: center;
+                    margin-top: 20px;
                 }
             }
 
@@ -305,7 +303,7 @@
             .offer-message {
                 width: 80%;
                 height: 150px;
-                background-color: #e1e1e8e7;
+                background-color: #a0d5e7;
                 -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 51% 93%, 50% 100%, 49% 93%, 0 93%);
                 clip-path: polygon(0% 0%, 100% 0%, 100% 87%, 51% 87%, 50% 100%, 49% 87%, 0 87%);
                 margin: 30px 0;
@@ -464,7 +462,7 @@
                 font-weight: bold;
                 padding: 10px 0;
                 border-bottom: 2px solid #82b0e24d;
-                color: #152b9c;
+                color: #1c275d;
             }
 
             .cards {
@@ -533,7 +531,7 @@
     }
 
     .emfasys3 {
-        color: #2c36dc;
+        color: #060717;
         font-weight: 500;
     }
 
@@ -576,11 +574,15 @@
         width: 320px;
     }
 
+    .offer-container .main .container .offer-video .video {
+        height: 350px;
+    }
+
     .offer-container {
         .main .container .offer-msg {
             .header-msg {
                 font-size: 2em;
-                margin-top: 20px;
+                margin-top: 10px;
             }
 
             .header-msg2 {

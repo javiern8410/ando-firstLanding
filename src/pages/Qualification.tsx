@@ -10,6 +10,7 @@ import './qualification.scss';
 import mainPic from '../images/laptop1.png';
 
 import TagManager from 'react-gtm-module';
+import CookiesMsg from '../components/cookiesmsg/CookieConsent';
 
 const tagManagerArgs = {
 	gtmId: 'GTM-PV4LQ97'
@@ -76,9 +77,8 @@ const Qualification = () => {
 	
 	return (
 		<div className="qualification-container" id="top">
-			<div className="backG">
-				
-			</div>
+			<CookiesMsg />
+			<div className="backG"></div>
 			<div className="header">
 				<div className="container">
 					<Logo />
